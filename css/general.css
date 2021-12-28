@@ -1,1 +1,112 @@
-/* No CSS *//*# sourceMappingURL=general.css.map */
+@import url("https://fonts.googleapis.com/css2?family=Hurricane&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  color: #bec0bd;
+}
+
+body {
+  background-color: #5b3a2b;
+}
+
+body header {
+  height: 75px;
+  outline: 1px solid black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body header .logo {
+  height: 100%;
+  width: 75px;
+}
+
+body header nav {
+  margin-left: auto;
+  padding: 10px 50px;
+}
+
+body main #welcome-area {
+  height: calc(100vh - 75px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+body main #welcome-area .left {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body main #welcome-area .left * {
+  padding-left: 10%;
+}
+
+body main #welcome-area .left h1 {
+  font-family: "Hurricane";
+  font-size: 50px;
+  font-weight: 200;
+}
+
+body main #welcome-area .left h2 {
+  font-size: 25px;
+  font-weight: 400;
+}
+
+body main #welcome-area .right {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body main #welcome-area .right img {
+  width: 70%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: left;
+     object-position: left;
+  border-radius: 50% 20% 50% 20%;
+  -webkit-box-shadow: 8px 8px #bec0bd;
+          box-shadow: 8px 8px #bec0bd;
+}
+
+body footer {
+  height: 500px;
+}
+/*# sourceMappingURL=general.css.map */
