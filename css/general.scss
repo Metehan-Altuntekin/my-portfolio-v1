@@ -4,81 +4,127 @@ $light: #b38553;
 $green: #848679;
 $white: #bec0bd;
 
-@import url('https://fonts.googleapis.com/css2?family=Hurricane&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-*{
+@import url('https://fonts.googleapis.com/css2?family=Hurricane&family=Josefin+Slab:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Karma:wght@300;400;500;600;700&family=Kotta+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/*
+font-family: 'Hurricane', cursive;
+font-family: 'Josefin Slab', serif;
+font-family: 'Karma', serif;
+font-family: 'Kotta One', serif;
+font-family: 'Roboto', sans-serif;
+*/
+
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  text-decoration: none;
-  font-family: "Roboto", sans-serif;
-  color: $white;
-}
+  border-radius: 2px;
 
-body{
+  text-decoration: none;
+  font-family: "Josefin Slab", sans;
+  color: $white;
+  font-weight: 500;
+  //text-shadow: 1px 1px black, -1px -1px black;
+
+  transition: 0.15s;
+}
+button,
+a {
+  display: inline-block;
+  padding: 5px 15px;
+  background-color: $light;
+  color: black;
+  border: 1px solid  transparent;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 20px 5px;
+  box-shadow: 2px 2px $white;
+  &:hover{
+    transform: translateY(-5px);
+    -webkit-transform: translateY(-5px);
+    background-color: $white;
+    color: $dark;
+    box-shadow: 2px 7px $white;
+  }
+  &:active{
+    transform: translateY(0) translateX(0);
+    -webkit-transform: translateX(0) translateY(0);
+    box-shadow: 2px 2px $white;
+  }
+}
+body {
   background-color: $dark;
 
-  header{
+  header {
     height: 75px;
-    outline: 1px solid black;
     display: flex;
+    position: sticky;
+    top: 0;
     flex-direction: row;
     justify-content: center;
     align-items: center;
 
-    .logo{
-      height: 100%;
+    backdrop-filter: blur(5px);
+
+    .logo {
+      height: 75px;
       width: 75px;
+      margin-left: 100px;
+      background-color: $green;
+      border-radius: 50% 50% 70px 70px;
+      box-shadow: 0px 4px 6px $white;
     }
-    nav{
+    nav {
       margin-left: auto;
       padding: 10px 50px;
     }
   }
-  main{
-
-    #welcome-area{
+  main {
+    #welcome-area {
       height: calc(100vh - 75px);
       display: flex;
       flex-direction: row;
-
-      .left{
+      
+      .left {
         width: 50%;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-
-        *{
-          padding-left: 10%;
+        //justify-content: center;
+        align-items: center;
+        margin-top: 10%;
+        * {
+          margin: 5px;
         }
-        h1{
+        h1 {
           font-family: "Hurricane";
-          font-size: 50px;
+          font-size: 12vh;
           font-weight: 200;
+          text-decoration: underline $green 4px;
         }
-        h2{
-          font-size: 25px;
+        h2 {
+          font-size: 5vh;
           font-weight: 400;
         }
-        
       }
-      .right{
+      .right {
         width: 50%;
         display: flex;
         justify-content: center;
-        align-items: center;
-        img{
-          width: 70%;
-          height: 100%;
+        align-items: top;
+        img {
+          width: calc(100vh -75px);
+          height: calc(100vh - 75px - 8px);
           object-fit: cover;
           object-position: left;
-          
-          border-radius: 50% 20% 50% 20%;
-          box-shadow: 8px 8px $white;
+
+          border-radius: 50% 20%;
+          box-shadow: 8px 8px 16px $white, 0px 0px 1000px black;
         }
       }
     }
   }
-  footer{
+  footer {
     height: 500px;
+    background-color: $green;
   }
 }

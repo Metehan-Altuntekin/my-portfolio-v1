@@ -1,12 +1,55 @@
-@import url("https://fonts.googleapis.com/css2?family=Hurricane&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Hurricane&family=Josefin+Slab:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Karma:wght@300;400;500;600;700&family=Kotta+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+/*
+font-family: 'Hurricane', cursive;
+font-family: 'Josefin Slab', serif;
+font-family: 'Karma', serif;
+font-family: 'Kotta One', serif;
+font-family: 'Roboto', sans-serif;
+*/
 * {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  border-radius: 2px;
   text-decoration: none;
-  font-family: "Roboto", sans-serif;
+  font-family: "Josefin Slab", sans;
   color: #bec0bd;
+  font-weight: 500;
+  -webkit-transition: 0.15s;
+  transition: 0.15s;
+}
+
+button,
+a {
+  display: inline-block;
+  padding: 5px 15px;
+  background-color: #b38553;
+  color: black;
+  border: 1px solid  transparent;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 20px 5px;
+  -webkit-box-shadow: 2px 2px #bec0bd;
+          box-shadow: 2px 2px #bec0bd;
+}
+
+button:hover,
+a:hover {
+  transform: translateY(-5px);
+  -webkit-transform: translateY(-5px);
+  background-color: #bec0bd;
+  color: #5b3a2b;
+  -webkit-box-shadow: 2px 7px #bec0bd;
+          box-shadow: 2px 7px #bec0bd;
+}
+
+button:active,
+a:active {
+  transform: translateY(0) translateX(0);
+  -webkit-transform: translateX(0) translateY(0);
+  -webkit-box-shadow: 2px 2px #bec0bd;
+          box-shadow: 2px 2px #bec0bd;
 }
 
 body {
@@ -15,10 +58,12 @@ body {
 
 body header {
   height: 75px;
-  outline: 1px solid black;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -29,11 +74,18 @@ body header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
 }
 
 body header .logo {
-  height: 100%;
+  height: 75px;
   width: 75px;
+  margin-left: 100px;
+  background-color: #848679;
+  border-radius: 50% 50% 70px 70px;
+  -webkit-box-shadow: 0px 4px 6px #bec0bd;
+          box-shadow: 0px 4px 6px #bec0bd;
 }
 
 body header nav {
@@ -61,23 +113,26 @@ body main #welcome-area .left {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 10%;
 }
 
 body main #welcome-area .left * {
-  padding-left: 10%;
+  margin: 5px;
 }
 
 body main #welcome-area .left h1 {
   font-family: "Hurricane";
-  font-size: 50px;
+  font-size: 12vh;
   font-weight: 200;
+  -webkit-text-decoration: underline #848679 4px;
+          text-decoration: underline #848679 4px;
 }
 
 body main #welcome-area .left h2 {
-  font-size: 25px;
+  font-size: 5vh;
   font-weight: 400;
 }
 
@@ -89,24 +144,25 @@ body main #welcome-area .right {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: top;
+      -ms-flex-align: top;
+          align-items: top;
 }
 
 body main #welcome-area .right img {
-  width: 70%;
-  height: 100%;
+  width: calc(100vh -75px);
+  height: calc(100vh - 75px - 8px);
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: left;
      object-position: left;
-  border-radius: 50% 20% 50% 20%;
-  -webkit-box-shadow: 8px 8px #bec0bd;
-          box-shadow: 8px 8px #bec0bd;
+  border-radius: 50% 20%;
+  -webkit-box-shadow: 8px 8px 16px #bec0bd, 0px 0px 1000px black;
+          box-shadow: 8px 8px 16px #bec0bd, 0px 0px 1000px black;
 }
 
 body footer {
   height: 500px;
+  background-color: #848679;
 }
 /*# sourceMappingURL=general.css.map */
