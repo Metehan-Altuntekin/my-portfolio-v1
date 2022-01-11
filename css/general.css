@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-decoration: none;
+  color: #000;
+  font-family: "Roboto", sans-serif;
+}
+
+a.primary {
+  background-color: #FF5F1B;
+  padding: 0.4em 2em;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  font-size: 0.9em;
+  border-radius: 5px;
+}
+/*# sourceMappingURL=general.css.map */

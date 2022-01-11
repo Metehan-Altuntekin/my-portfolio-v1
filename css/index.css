@@ -1,0 +1,128 @@
+html {
+  font-size: 16px;
+}
+
+html body {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 10px calc(100% - 20px) 10px;
+      grid-template-columns: 10px calc(100% - 20px) 10px;
+      grid-template-areas: "header header header" "...... main   ......";
+}
+
+html body header {
+  border-bottom: 1px solid #925EE6;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 5vh;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: header;
+}
+
+html body header .logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 5%;
+  margin-left: 10px;
+}
+
+html body header .logo img {
+  height: 90%;
+}
+
+html body header .logo h1 {
+  font-family: "Josefin Slab", serif;
+  color: #925EE6;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  font-size: 80%;
+  white-space: nowrap;
+}
+
+html body header nav {
+  display: none;
+  /*
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+        margin-right: 10%;
+        gap: 2vw;
+        a{
+          color: $salmon-vivid;
+          font-variant: small-caps;
+          font-size: 1em;
+        }
+        */
+}
+
+html body main {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: main;
+}
+
+html body main section.hero {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 95vh;
+  width: 100%;
+}
+
+html body main section.hero h1 {
+  margin: 20% 0 5%;
+  color: #222;
+  width: 70%;
+  font-weight: 700;
+  font-size: 1.8em;
+  line-height: 1em;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+}
+
+html body main section.hero svg {
+  width: 80%;
+  opacity: 0.8;
+  margin: 0 0 0 auto;
+}
+
+html body main section.hero p {
+  font-family: "Josefin Slab", serif;
+  font-size: 0.8em;
+  width: 90%;
+  line-height: 1.5em;
+  margin: 10% 0;
+}
+
+html body main section.hero p span {
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  color: #FF5F1B;
+}
+
+html body main section.hero p span:last-child {
+  color: #925EE6;
+}
+
+html body main section.hero a {
+  -ms-grid-column-align: center;
+      justify-self: center;
+  margin: auto;
+}
+/*# sourceMappingURL=index.css.map */

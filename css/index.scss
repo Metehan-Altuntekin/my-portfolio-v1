@@ -1,0 +1,97 @@
+@import "./utilities";
+
+html{
+  font-size: 16px;
+
+  body{
+    display: grid;
+    grid-template-columns: 10px calc(100% - 20px) 10px;
+    grid-template-areas: 
+    "header header header"
+    "...... main   ......";
+    header{
+      border-bottom: 1px solid $purple;
+      display: flex;
+      height: 5vh;
+      grid-area: header;
+
+      .logo{
+        display: flex;
+        align-items: center;
+        gap: 5%;
+        margin-left: 10px;
+        img{
+          height: 90%;
+        }
+        h1{
+          font-family: "Josefin Slab", serif;
+          color: $purple;
+          width: max-content;
+          font-size: 80%;
+          white-space: nowrap;
+        }
+      }
+      nav{
+        display: none;
+        /*
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+        margin-right: 10%;
+        gap: 2vw;
+        a{
+          color: $salmon-vivid;
+          font-variant: small-caps;
+          font-size: 1em;
+        }
+        */
+      }
+    }
+    main{
+      grid-area: main;
+
+      section.hero{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+
+        height: 95vh;
+        width: 100%;
+        h1{
+          margin: 20% 0 5%;
+          color: #222;
+          width: 70%;
+          font-weight: 700;
+          font-size: 1.8em;
+          line-height: 1em;
+          height: min-content;
+        }
+        svg{
+          width: 80%;
+          opacity: 0.8;
+          margin: 0 0 0 auto;
+        }
+        p{
+          font-family: "Josefin Slab", serif;
+          font-size: 0.8em;
+          width: 90%;
+          line-height: 1.5em;
+          margin: 10% 0;
+          span{
+            font-size: inherit;
+            font-family: inherit;
+            font-weight: inherit;
+            color: $salmon-vivid;
+            &:last-child{
+              color: $purple;
+            }
+          }
+        }
+        a{
+          justify-self: center;
+          margin: auto;
+        }
+      }
+    }
+  }
+}
