@@ -7,6 +7,13 @@
   text-decoration: none;
   color: #000;
   font-family: "Roboto", sans-serif;
+  border: none;
+  text-shadow: none;
+  outline: none;
+}
+
+body {
+  background-color: #FAF7FF;
 }
 
 a.primary {
@@ -18,5 +25,33 @@ a.primary {
   letter-spacing: 0.04em;
   font-size: 0.9em;
   border-radius: 5px;
+}
+
+h1.section {
+  color: rgba(0, 0, 0, 0.05);
+  font-size: 2em;
+  letter-spacing: 0.1em;
+  text-align: center;
+  padding: 0.8em 0 0.4em 0;
+}
+
+h1.article {
+  font-size: 1.6em;
+  font-family: "Josefin Slab";
+  text-align: center;
+  margin: 1em 0 0.4em 0;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+}
+
+button.info {
+  width: 20px;
+  height: 20px;
+  border-radius: 1000px;
+  font-family: "Roboto", serif;
+  font-size: 16px;
+  font-weight: 900;
+  font-family: black;
 }
 /*# sourceMappingURL=general.css.map */

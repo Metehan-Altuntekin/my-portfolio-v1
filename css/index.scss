@@ -14,7 +14,8 @@ html{
       display: flex;
       height: 5vh;
       grid-area: header;
-
+      position: sticky;
+      top: 0;
       .logo{
         display: flex;
         align-items: center;
@@ -90,6 +91,88 @@ html{
         a{
           justify-self: center;
           margin: auto;
+        }
+      }
+      section#portfolio{
+        display: flex;
+        flex-direction: column;
+        article{
+          width: calc(100vw - 10px);
+          height: 500px;
+          background-color: $salmon-bg;
+          position: relative;
+          margin: 20px 0;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          iframe{
+            width: 80%;
+            height: 80%;
+            justify-self: center;
+            margin: 0 auto;
+            border: 7px solid $salmon-border;
+            border-radius: 30px;
+          }
+          &:nth-child(even){
+            right: 10px;
+            border-radius: 0 100px 50px 0;
+          }
+          &:nth-child(odd){
+            left: 10px;
+            border-radius: 100px 0px 0px 50px;
+          }
+          
+        }
+
+        a{
+          align-self: center;
+          margin: 1em 0 2em;
+        }
+      }
+      section#services{
+        background-color: $services-bg;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        width: 100vw;
+        position: relative;
+        right: 10px;
+        article{
+          background-color: $service-bg;
+          width: calc(100% - 20px);
+          border-radius: 30px;
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+          img{
+            width: 60px;
+            transform: translateY(-20px);
+          }
+          h1{
+            padding: 10px 0 20px 0;
+            font-size: 1.5em;
+          }
+          p{
+            padding: 10px 20px 30px;
+            font-size: 1em;
+            line-height: 1.5em;
+            letter-spacing: .05em;
+            word-spacing: 0.1em;
+          }
+          ul{
+            padding-left: 20px;
+            width: calc(100% - 40px);
+
+            li{
+              line-height: 1.5em;
+              color: #393939;
+            }
+          }
+          a{
+            margin: 2em 0px 3em;
+          }
         }
       }
     }
