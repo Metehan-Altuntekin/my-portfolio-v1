@@ -1,6 +1,5 @@
 @import "./utilities";
 
-$side-gap: 10px;
 
 html{
   font-size: 14px;
@@ -12,7 +11,6 @@ html{
       border-bottom: 1px solid $header-border;
       display: flex;
       height: 5vh;
-      padding-left: $side-gap;
       .logo{
         display: flex;
         align-items: center;
@@ -24,7 +22,7 @@ html{
           font-family: "Josefin Slab", serif;
           color: $purple;
           width: max-content;
-          font-size: 80%;
+          font-size: 2vh;
           white-space: nowrap;
         }
       }
@@ -46,12 +44,8 @@ html{
     }
     main{
 
-      & > *{
-        padding: $side-gap;
-      }
       section.hero{
         display: flex;
-        flex-wrap: wrap;
         flex-direction: column;
 
         height: 95vh;
@@ -71,7 +65,7 @@ html{
         }
         p{
           font-family: "Josefin Slab", serif;
-          font-size: 0.8em;
+          font-size: 1em;
           width: 90%;
           line-height: 1.5em;
           margin: 10% 0;
@@ -95,15 +89,13 @@ html{
         flex-direction: column;
         padding: 0;
         article{
-          width: calc(100% - $side-gap);
           height: 500px;
           background-color: $salmon-bg;
           position: relative;
-          margin: 20px 0;
           display: flex;
           flex-direction: column;
           align-items: center;
-
+          
           iframe{
             width: 80%;
             height: 80%;
@@ -114,10 +106,13 @@ html{
           }
           &:nth-child(even){
             border-radius: 0 100px 50px 0;
+            margin-right: 10px;
+            margin-bottom: 10px;
           }
           &:nth-child(odd){
             border-radius: 100px 0px 0px 50px;
-            margin-left: $side-gap;
+            margin-left: 10px;
+            margin-bottom: 10px;
           }
           
         }
@@ -132,9 +127,13 @@ html{
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
         gap: 30px;
         padding-bottom: 70px;
         border-radius: 0 0 60px 60px;
+        & > h1{
+          color: rgba($color: #fff, $alpha: 0.2);
+        }
         article{
           background-color: $service-bg;
           
@@ -143,8 +142,8 @@ html{
           align-items: center;
           flex-direction: column;
           img{
-            width: 60px;
-            transform: translateY(-20px);
+            height: 40px;
+            transform: translateY(-35%);
           }
           h1{
             padding: 10px 0 20px 0;
@@ -156,21 +155,20 @@ html{
             font-size: 1em;
             line-height: 1.5em;
             font-weight: 300;
-            text-align: center;
           }
           ul{
             padding-left: 20px;
             width: calc(100% - 40px);
             display: flex;
             flex-direction: column;
-            align-items: center;
+            margin-bottom: 2em;
             li{
               line-height: 1.5em;
               color: #555;
             }
           }
           a{
-            margin: 2em 0px 3em;
+            margin: auto 0px 3em;
           }
         }
       }
@@ -237,16 +235,22 @@ html{
         background-color: $contact-bg;
         display: flex;
         flex-direction: column;
+        align-items: center;
         position: relative;
         z-index: 4;
         padding-top: 100px;
-
+        
+        & > h1{
+          color: rgba($color: #fff, $alpha: 0.1);
+        }
         article{
           background-color: $contact-article-bg;
           border-radius: 30px;
           color: white;
           padding: 15px 15px 30px 15px;
           margin: 1em 0;
+          max-width: 300px;
+          width: calc(100% - 20px);
           h1{
             color: rgb(255, 255, 148);
             font-size: 1.5em;
@@ -281,7 +285,6 @@ html{
       background-color: $contact-article-bg;
       width: 100%;
       height: clamp(200px, max-content, 500px);
-      padding: $side-gap;
       display: flex;
       flex-direction: column;
       
@@ -292,6 +295,82 @@ html{
         font-size: 1.2em;
         text-decoration: underline 1px;
         align-self: flex-end;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 400px){
+  html{
+    font-size: 16px;
+
+    body{
+      main{
+        section#portfolio{
+          article{
+            &:nth-child(even){
+              margin-right: 20px;
+              margin-bottom: 20px;
+            }
+            &:nth-child(odd){
+              margin-left: 20px;
+              margin-bottom: 20px;
+            }
+          }
+        }
+        section#services{
+          article{
+            width: 300px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 800px) {
+  html{
+    body{
+      main{
+        section#portfolio{
+          article{
+            &:nth-child(even){
+              margin-right: 40px;
+              margin-bottom: 40px;
+            }
+            &:nth-child(odd){
+              margin-left: 40px;
+              margin-bottom: 40px;
+            }
+          }
+        }
+        section#services{
+          flex-direction: row;
+          flex-wrap: wrap;
+          article{
+            height: 450px;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: 1400px) {
+  html{
+    body{
+      main{
+        section#portfolio{
+          article{
+            &:nth-child(even){
+              margin-right: 150px;
+              margin-bottom: 150px;
+            }
+            &:nth-child(odd){
+              margin-left: 150px;
+              margin-bottom: 150px;
+            }
+          }
+        }
       }
     }
   }

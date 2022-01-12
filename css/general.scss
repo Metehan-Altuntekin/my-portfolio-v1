@@ -12,10 +12,32 @@
   border: none;
   text-shadow: none;
   outline: none;
+  transition: 0.2s;
+  scroll-behavior: smooth;
 }
 body{
   background-color: $bg;
 }
+
+.side-gap{
+  padding: 0px 10px;
+}
+@media screen and (min-width: 400px){
+  .side-gap{
+    padding: 0px 20px;
+  }
+}
+@media screen and (min-width: 800px){
+  .side-gap{
+    padding: 0px 40px;
+  }
+}
+@media screen and (min-width: 1400px){
+  .side-gap{
+    padding: 0px 150px;
+  }
+}
+
 a.primary{
   background-color: $salmon-vivid;
   padding: 0.5em 2em;
@@ -33,6 +55,8 @@ h1.section{
   letter-spacing: 0.1em;
   text-align: center;
   padding: 0.8em 0 0.4em 0;
+  display: block;
+  width: 100%;
 }
 
 h1.article{
@@ -41,15 +65,17 @@ h1.article{
   text-align: center;
   margin: 1em 0 0.4em 0;
   height: min-content;
+  display: flex;
 }
 
 button.info{
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
   border-radius: 1000px;
   font-family: "Roboto", serif;
-  font-size: 16px;
+  font-size: 12px;
   font-weight: 900;
   font-family: black;
-
+  align-self: center;
+  margin-left: 10px;
 }
