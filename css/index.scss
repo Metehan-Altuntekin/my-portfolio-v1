@@ -10,45 +10,42 @@ html{
     header{
       border-bottom: 1px solid $header-border;
       display: flex;
-      height: 5vh;
+      height: 35px;
       .logo{
         display: flex;
         align-items: center;
         gap: 5%;
         img{
-          height: 90%;
+          height: 100%;
         }
         h1{
           font-family: "Josefin Slab", serif;
           color: $purple;
           width: max-content;
-          font-size: 2vh;
+          font-size: 16px;
           white-space: nowrap;
         }
       }
       nav{
         display: none;
-        /*
-        display: flex;
         align-items: center;
         margin-left: auto;
-        margin-right: 10%;
-        gap: 2vw;
+        gap: 5vw;
         a{
           color: $salmon-vivid;
           font-variant: small-caps;
           font-size: 1em;
         }
-        */
+        
       }
     }
     main{
 
-      section.hero{
+      section#hero{
         display: flex;
         flex-direction: column;
 
-        height: 95vh;
+        height: calc(100vh - 35px);
         h1{
           margin: 20% 0 5%;
           color: #222;
@@ -59,8 +56,7 @@ html{
           height: min-content;
         }
         svg{
-          width: 80%;
-          opacity: 0.8;
+          height: 30vh;
           margin: 0 0 0 auto;
         }
         p{
@@ -235,7 +231,9 @@ html{
         background-color: $contact-bg;
         display: flex;
         flex-direction: column;
+        justify-content: center;
         align-items: center;
+
         position: relative;
         z-index: 4;
         padding-top: 100px;
@@ -248,7 +246,9 @@ html{
           border-radius: 30px;
           color: white;
           padding: 15px 15px 30px 15px;
-          margin: 1em 0;
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
           max-width: 300px;
           width: calc(100% - 20px);
           h1{
@@ -303,9 +303,14 @@ html{
 @media screen and (min-width: 400px){
   html{
     font-size: 16px;
-
+    
     body{
       main{
+        section#hero{
+          h1{
+            font-size: 3em;
+          }
+        }
         section#portfolio{
           article{
             &:nth-child(even){
@@ -331,6 +336,18 @@ html{
 @media screen and (min-width: 800px) {
   html{
     body{
+      header{
+        height: 50px;
+        .logo{
+          h1{
+            font-size: 20px;
+          }
+        }
+        nav{
+          display: flex;
+  
+        }
+      }
       main{
         section#portfolio{
           article{
@@ -350,6 +367,10 @@ html{
           article{
             height: 450px;
           }
+        }
+        section#contact{
+          flex-direction: row;
+          flex-wrap: wrap;
         }
       }
     }
