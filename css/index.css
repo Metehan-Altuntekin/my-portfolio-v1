@@ -12,6 +12,11 @@ html body header {
   display: -ms-flexbox;
   display: flex;
   height: 35px;
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
 }
 
 html body header .logo {
@@ -322,22 +327,21 @@ html body main section#contact {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: start;
-  gap: 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 40px;
   position: relative;
   z-index: 4;
-  padding-top: 100px;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 html body main section#contact > h1 {
@@ -345,8 +349,8 @@ html body main section#contact > h1 {
 }
 
 html body main section#contact article {
-  border-radius: 30px;
   color: white;
+  padding-left: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -356,14 +360,16 @@ html body main section#contact article {
           flex-direction: column;
   width: 100%;
   max-width: 300px;
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 html body main section#contact article h1 {
-  color: rgba(255, 255, 255, 0.2);
-  font-size: 1.4em;
+  color: rgba(255, 255, 255, 0.25);
+  font-size: 0.7em;
+  letter-spacing: 0.4em;
+  font-variant: small-caps;
   font-weight: 500;
-  font-family: "Josefin Slab", serif;
-  padding: 0.3em 0;
+  padding-bottom: 0.3em;
   margin-bottom: 1em;
 }
 
@@ -371,11 +377,11 @@ html body main section#contact article h1::before {
   content: "";
   background: -webkit-gradient(linear, left top, right top, from(salmon), to(transparent));
   background: linear-gradient(to right, salmon, transparent);
-  opacity: 0.7;
+  opacity: 0.3;
   border-radius: 5000px;
-  -webkit-transform: translate(0, -5px);
-          transform: translate(0, -5px);
-  width: 40px;
+  -webkit-transform: translate(0, 1.2em);
+          transform: translate(0, 1.2em);
+  width: 80px;
   height: 2px;
   display: block;
   position: absolute;
@@ -392,8 +398,17 @@ html body main section#contact article ul li {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 0.8em;
   margin-bottom: 0.6em;
+}
+
+html body main section#contact article ul li a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.8em;
 }
 
 html body main section#contact article ul li img {
@@ -402,12 +417,15 @@ html body main section#contact article ul li img {
 
 html body main section#contact article ul li span {
   color: #fff;
-  font-size: 1em;
+  font-size: 0.8em;
   letter-spacing: 0.02em;
 }
 
-html body main section#contact article ul li span span {
+html body main section#contact article ul li span div {
+  display: inline-block;
   padding-right: 2px;
+  font-size: 1em;
+  color: inherit;
 }
 
 html body footer {
@@ -486,6 +504,25 @@ html body footer button.thanks {
   }
   html body main section#services article {
     height: 450px;
+  }
+  html body main section#contact {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+  html body main section#contact article {
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
   }
 }
 
