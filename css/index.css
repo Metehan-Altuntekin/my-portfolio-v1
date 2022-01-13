@@ -322,16 +322,19 @@ html body main section#contact {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  gap: 20px;
   position: relative;
   z-index: 4;
   padding-top: 100px;
@@ -342,10 +345,8 @@ html body main section#contact > h1 {
 }
 
 html body main section#contact article {
-  background-color: #291051;
   border-radius: 30px;
   color: white;
-  padding: 15px 15px 30px 15px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -353,16 +354,31 @@ html body main section#contact article {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 20px;
+  width: 100%;
   max-width: 300px;
-  width: calc(100% - 20px);
 }
 
 html body main section#contact article h1 {
-  color: #ffff94;
-  font-size: 1.5em;
+  color: rgba(255, 255, 255, 0.2);
+  font-size: 1.4em;
   font-weight: 500;
-  padding: 0.3em 0 1em;
+  font-family: "Josefin Slab", serif;
+  padding: 0.3em 0;
+  margin-bottom: 1em;
+}
+
+html body main section#contact article h1::before {
+  content: "";
+  background: -webkit-gradient(linear, left top, right top, from(salmon), to(transparent));
+  background: linear-gradient(to right, salmon, transparent);
+  opacity: 0.7;
+  border-radius: 5000px;
+  -webkit-transform: translate(0, -5px);
+          transform: translate(0, -5px);
+  width: 40px;
+  height: 2px;
+  display: block;
+  position: absolute;
 }
 
 html body main section#contact article ul {
@@ -386,7 +402,8 @@ html body main section#contact article ul li img {
 
 html body main section#contact article ul li span {
   color: #fff;
-  font-size: 0.9em;
+  font-size: 1em;
+  letter-spacing: 0.02em;
 }
 
 html body main section#contact article ul li span span {
@@ -469,14 +486,6 @@ html body footer button.thanks {
   }
   html body main section#services article {
     height: 450px;
-  }
-  html body main section#contact {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
   }
 }
 

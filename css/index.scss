@@ -230,10 +230,11 @@ html{
       section#contact{
         background-color: $contact-bg;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: wrap;
         justify-content: center;
-        align-items: center;
-
+        align-items: start;
+        gap: 20px;
         position: relative;
         z-index: 4;
         padding-top: 100px;
@@ -242,20 +243,37 @@ html{
           color: rgba($color: #fff, $alpha: 0.1);
         }
         article{
-          background-color: $contact-article-bg;
+          //background-color: $contact-article-bg;
           border-radius: 30px;
           color: white;
-          padding: 15px 15px 30px 15px;
+          //padding: 15px 15px 30px 15px;
           display: flex;
           flex-direction: column;
-          gap: 20px;
+          width: 100%;
           max-width: 300px;
-          width: calc(100% - 20px);
+
           h1{
-            color: rgb(255, 255, 148);
-            font-size: 1.5em;
+            color: rgba(255, 255, 255, 0.2);
+            font-size: 1.4em;
             font-weight: 500;
-            padding: 0.3em 0 1em;
+            font-family: "Josefin Slab", serif;
+            padding: 0.3em 0;
+            margin-bottom: 1em;
+            //display: none;
+
+            &::before{
+              content: "";
+              background: linear-gradient(to right, salmon, transparent);
+              opacity: 0.7;
+              border-radius: 5000px;
+              transform: translate(0, -5px);
+              width: 40px;
+              height: 2px;
+              display: block;
+              position: absolute;
+            }
+            
+            
           }
           ul{
             list-style-type: none;
@@ -270,7 +288,8 @@ html{
               }
               span{
                 color: #fff;
-                font-size: 0.9em;
+                font-size: 1em;
+                letter-spacing: 0.02em;
                 span{
                   padding-right: 2px;
                 }
@@ -328,6 +347,8 @@ html{
             width: 300px;
           }
         }
+        section#contact{
+        }
       }
     }
   }
@@ -368,10 +389,7 @@ html{
             height: 450px;
           }
         }
-        section#contact{
-          flex-direction: row;
-          flex-wrap: wrap;
-        }
+        
       }
     }
   }
