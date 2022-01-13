@@ -248,25 +248,44 @@ html body main section#services article a {
 }
 
 html body main section#about {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-grid-columns: 0 50% 50% 0;
+      grid-template-columns: 0 50% 50% 0;
+      grid-template-areas: "... head head ..." "... img  img  ..." "... info info ..." "... prog prog ..." "... butt butt ...";
+  gap: 40px;
   border-radius: 0 0 50px 50px;
   background-color: #FAF7FF;
   z-index: 5;
   position: relative;
   top: 50px;
+  padding-bottom: 70px;
+}
+
+html body main section#about > h1 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: head;
 }
 
 html body main section#about > img {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: img;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 30px;
-  height: 65vh;
+  width: 100%;
+  max-width: 400px;
 }
 
 html body main section#about article {
@@ -279,18 +298,38 @@ html body main section#about article {
           flex-direction: column;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  width: 100%;
+  max-width: 400px;
 }
 
 html body main section#about article h1 {
-  padding: 20px 0 10px 10px;
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: head;
+  padding: 0 0 10px 10px;
+}
+
+html body main section#about article.info {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: info;
 }
 
 html body main section#about article.info p {
   background-color: #FFEDE7;
+  border-radius: 30px;
   padding: 30px 10px;
   font-weight: 300;
   line-height: 1.6em;
-  border-radius: 30px;
+}
+
+html body main section#about article.programs {
+  -ms-grid-row: 4;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: prog;
 }
 
 html body main section#about article.programs ul {
@@ -302,11 +341,17 @@ html body main section#about article.programs ul {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   background-color: #FFEDE7;
   padding: 20px 10px;
   border-radius: 20px;
   gap: 20px;
-  overflow-x: scroll;
+  overflow-x: auto;
   width: 100%;
 }
 
@@ -315,7 +360,46 @@ html body main section#about article.programs ul img {
   height: 50px;
 }
 
+html body main section#about article.certificates {
+  grid-area: cert;
+  display: none;
+}
+
+html body main section#about article.certificates ul {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: #FFEDE7;
+  padding: 20px 10px;
+  border-radius: 20px;
+  gap: 20px;
+  overflow-x: auto;
+  width: 100%;
+}
+
+html body main section#about article.certificates img {
+  display: inline-block;
+  background-color: pink;
+  min-width: 350px;
+  min-height: 200px;
+}
+
 html body main section#about a {
+  -ms-grid-row: 5;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: butt;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
@@ -360,7 +444,7 @@ html body main section#contact article {
           flex-direction: column;
   width: 100%;
   max-width: 300px;
-  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  border-left: 1px solid rgba(255, 255, 255, 0.07);
 }
 
 html body main section#contact article h1 {
@@ -472,6 +556,24 @@ html body footer button.thanks {
   html body main section#services article {
     width: 300px;
   }
+  html body main section#about article.info h1 {
+    padding-left: 1.6em;
+  }
+  html body main section#about article.info p {
+    padding: 2em;
+  }
+  html body main section#about article.programs h1 {
+    padding-left: 1.7em;
+  }
+  html body main section#about article.programs ul {
+    padding-left: 2em;
+  }
+  html body main section#about article.certificates h1 {
+    padding-left: 1.7em;
+  }
+  html body main section#about article.certificates ul {
+    padding-left: 2em;
+  }
 }
 
 @media screen and (min-width: 800px) {
@@ -523,6 +625,30 @@ html body footer button.thanks {
     width: -webkit-max-content;
     width: -moz-max-content;
     width: max-content;
+  }
+  html body main section#about {
+        grid-template-areas: ".... head head ...." ".... img  info ...." ".... prog prog ...." ".... cert cert ....";
+  }
+  html body main section#about > img {
+    height: 100%;
+    -ms-grid-column-align: end;
+        justify-self: end;
+  }
+  html body main section#about article.info {
+    -ms-grid-column-align: start;
+        justify-self: start;
+  }
+  html body main section#about article.programs, html body main section#about article.certificates {
+    width: 840px;
+    max-width: 100%;
+  }
+  html body main section#about article.certificates {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  html body main section#about > a {
+    display: none;
   }
 }
 

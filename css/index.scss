@@ -174,48 +174,73 @@ html{
         }
       }
       section#about{
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        justify-content: center;
+        justify-items: center;
+        align-items: center;
+
+        grid-template-columns: 0 50% 50% 0;
+        grid-template-areas: 
+        "... head head ..."
+        "... img  img  ..."
+        "... info info ..."
+        "... prog prog ..."
+        "... butt butt ...";
+        gap: 40px;
+
         border-radius: 0 0 50px 50px;
         background-color: $bg;
         z-index: 5;
         position: relative;
         top: 50px;
+        padding-bottom: 70px;
+        & > h1{
+          grid-area: head;
+        }
         & > img{
+          grid-area: img;
           object-fit: cover;
           border-radius: 30px;
-          height: 65vh;
+          //height: 65vh;
+          width: 100%;
+          max-width: 400px;
         }
 
         article{
           display: flex;
           flex-direction: column;
           flex-wrap: wrap;
+          width: 100%;
+          max-width: 400px;
           h1{
-            padding: 20px 0 10px 10px;
+            grid-area: head;
+            padding: 0 0 10px 10px;
           }
           &.info{
-
+            grid-area: info;
             p{
               background-color: $salmon-bg-light;
+              border-radius: 30px;
               padding: 30px 10px;
               font-weight: 300;
               line-height: 1.6em;
-              border-radius: 30px;
             }
           }
 
           &.programs{
-
+            grid-area: prog;
+            
             ul{
               list-style-type: none;
               display: flex;
               flex-direction: row;
+              align-items: center;
+              justify-content: space-between;
               background-color: $salmon-bg-light;
               padding: 20px 10px;
               border-radius: 20px;
               gap: 20px;
-              overflow-x: scroll;
+              overflow-x: auto;
               width: 100%;
               li{
                 
@@ -226,10 +251,36 @@ html{
               }
             }
           }
+          &.certificates{
+            grid-area: cert;
+            display: none;
+            ul{
+              list-style-type: none;
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              justify-content: space-between;
+              background-color: $salmon-bg-light;
+              padding: 20px 10px;
+              border-radius: 20px;
+              gap: 20px;
+              overflow-x: auto;
+              width: 100%;
+            }
+            img{
+              display: inline-block;
+              background-color: pink;
+              min-width: 350px;
+              min-height: 200px;
+
+            }
+          }
         }
         a{
+          grid-area: butt;
           align-self: center;
           margin: 2em 0 4em;
+
         }
       }
       section#contact{
@@ -254,7 +305,7 @@ html{
           flex-direction: column;
           width: 100%;
           max-width: 300px;
-          border-left: 1px solid rgba($color: #fff, $alpha: 0.2);
+          border-left: 1px solid rgba($color: #fff, $alpha: 0.07);
           h1{
             color: rgba(255, 255, 255, 0.25);
             font-size: 0.7em;
@@ -360,6 +411,35 @@ html{
             width: 300px;
           }
         }
+        section#about{
+          
+          article{
+            &.info{
+              h1{
+                padding-left: 1.6em;
+              }
+              p{
+                padding: 2em;
+              }
+            }
+            &.programs{
+              h1{
+                padding-left: 1.7em;
+              }
+              ul{
+                padding-left: 2em;
+              }
+            }
+            &.certificates{
+              h1{
+                padding-left: 1.7em;
+              }
+              ul{
+                padding-left: 2em;
+              }
+            }
+          }
+        }
         section#contact{
         }
       }
@@ -411,7 +491,33 @@ html{
             width: max-content;
           }
         }
-        
+        section#about{
+          grid-template-areas: 
+          ".... head head ...."
+          ".... img  info ...."
+          ".... prog prog ...."
+          ".... cert cert ....";
+          & > img{
+            height: 100%;
+            justify-self: end;
+          }
+          article{
+            &.info{
+              justify-self: start;
+            }
+            &.programs,
+            &.certificates{
+              width: 840px;
+              max-width: 100%;
+            }
+            &.certificates{
+              display: flex;
+            }
+          }
+          & > a{
+            display: none;
+          }
+        }
       }
     }
   }
