@@ -59,39 +59,61 @@ html body header nav a {
 }
 
 html body main section#hero {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  height: calc(100vh - 35px);
+  height: 100vh;
+  padding-bottom: 10vh;
+  padding-top: 10vh;
+  gap: 5%;
+  display: -ms-grid;
+  display: grid;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  -ms-grid-columns: (1fr)[6];
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-areas: "head head head head head ...." ".... img  img  img  img  img " "text text text text text ...." ".... link link link link ....";
 }
 
 html body main section#hero h1 {
-  margin: 20% 0 5%;
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: head;
   color: #222;
-  width: 70%;
   font-weight: 700;
   font-size: 1.8em;
   line-height: 1em;
-  height: -webkit-min-content;
-  height: -moz-min-content;
-  height: min-content;
+  -ms-flex-item-align: end;
+      align-self: end;
 }
 
 html body main section#hero svg {
-  height: 30vh;
-  margin: 0 0 0 auto;
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: img;
+  -ms-flex-item-align: end;
+      align-self: end;
 }
 
 html body main section#hero p {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 5;
+  grid-area: text;
   font-family: "Josefin Slab", serif;
   font-size: 1em;
-  width: 90%;
   line-height: 1.5em;
-  margin: 10% 0;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  max-width: 400px;
 }
 
 html body main section#hero p span {
@@ -106,9 +128,18 @@ html body main section#hero p span:last-child {
 }
 
 html body main section#hero a {
+  -ms-grid-row: 4;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 4;
+  grid-area: link;
   -ms-grid-column-align: center;
       justify-self: center;
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
   margin: auto;
+  min-width: 0;
+  min-height: 0;
 }
 
 html body main section#portfolio {
@@ -588,6 +619,25 @@ html body footer button.thanks {
     display: -ms-flexbox;
     display: flex;
   }
+  html body main section#hero {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+    justify-items: start;
+    -ms-flex-line-pack: start;
+        align-content: start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
+    -ms-grid-rows: (1fr)[4];
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-areas: "head head head img  img  img " "head head head img  img  img " "text text text img  img  img" "link link link img  img  img ";
+  }
+  html body main section#hero a {
+    -ms-grid-column-align: start;
+        justify-self: start;
+    margin: unset;
+  }
   html body main section#portfolio article:nth-child(even) {
     margin-right: 40px;
     margin-bottom: 40px;
@@ -653,6 +703,12 @@ html body footer button.thanks {
 }
 
 @media screen and (min-width: 1400px) {
+  html body main section#hero {
+    padding-bottom: 20vh;
+  }
+  html body main section#hero h1 {
+    font-size: 4em;
+  }
   html body main section#portfolio article:nth-child(even) {
     margin-right: 150px;
     margin-bottom: 150px;
