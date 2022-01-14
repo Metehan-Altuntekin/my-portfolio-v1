@@ -59,7 +59,7 @@ html body header nav a {
 }
 
 html body main section#hero {
-  height: 100vh;
+  min-height: 100vh;
   padding-bottom: 10vh;
   padding-top: 10vh;
   gap: 5%;
@@ -82,7 +82,7 @@ html body main section#hero {
 
 html body main section#hero h1 {
   -ms-grid-row: 1;
-  -ms-grid-column: 2;
+  -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: head;
   color: #222;
@@ -95,7 +95,7 @@ html body main section#hero h1 {
 
 html body main section#hero svg {
   -ms-grid-row: 2;
-  -ms-grid-column: 2;
+  -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: img;
   -ms-flex-item-align: end;
@@ -288,9 +288,9 @@ html body main section#about {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-grid-columns: 0 50% 50% 0;
-      grid-template-columns: 0 50% 50% 0;
-      grid-template-areas: "... head head ..." "... img  img  ..." "... info info ..." "... prog prog ..." "... butt butt ...";
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas: " head head " " img  img  " " info info " " prog prog " " butt butt ";
   gap: 40px;
   border-radius: 0 0 50px 50px;
   background-color: #FAF7FF;
@@ -302,14 +302,14 @@ html body main section#about {
 
 html body main section#about > h1 {
   -ms-grid-row: 1;
-  -ms-grid-column: 2;
+  -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: head;
 }
 
 html body main section#about > img {
   -ms-grid-row: 2;
-  -ms-grid-column: 2;
+  -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: img;
   -o-object-fit: cover;
@@ -335,7 +335,7 @@ html body main section#about article {
 
 html body main section#about article h1 {
   -ms-grid-row: 1;
-  -ms-grid-column: 2;
+  -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: head;
   padding: 0 0 10px 10px;
@@ -343,7 +343,7 @@ html body main section#about article h1 {
 
 html body main section#about article.info {
   -ms-grid-row: 3;
-  -ms-grid-column: 2;
+  -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: info;
 }
@@ -358,7 +358,7 @@ html body main section#about article.info p {
 
 html body main section#about article.programs {
   -ms-grid-row: 4;
-  -ms-grid-column: 2;
+  -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: prog;
 }
@@ -428,7 +428,7 @@ html body main section#about article.certificates img {
 
 html body main section#about a {
   -ms-grid-row: 5;
-  -ms-grid-column: 2;
+  -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: butt;
   -ms-flex-item-align: center;
@@ -607,7 +607,7 @@ html body footer button.thanks {
   }
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 800px) and (orientation: landscape) {
   html body header {
     height: 50px;
   }
@@ -629,9 +629,10 @@ html body footer button.thanks {
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: start;
-    -ms-grid-rows: (1fr)[4];
-        grid-template-rows: repeat(4, 1fr);
-        grid-template-areas: "head head head img  img  img " "head head head img  img  img " "text text text img  img  img" "link link link img  img  img ";
+    padding-top: 100px;
+    -ms-grid-rows: (minmax(1fr))[3];
+        grid-template-rows: repeat(3, minmax(1fr));
+        grid-template-areas: "head head head img  img  img " "text text text img  img  img" "link link link img  img  img ";
   }
   html body main section#hero a {
     -ms-grid-column-align: start;
@@ -677,7 +678,7 @@ html body footer button.thanks {
     width: max-content;
   }
   html body main section#about {
-        grid-template-areas: ".... head head ...." ".... img  info ...." ".... prog prog ...." ".... cert cert ....";
+        grid-template-areas: " head head " " img  info " " prog prog " " cert cert ";
   }
   html body main section#about > img {
     height: 100%;
@@ -703,11 +704,15 @@ html body footer button.thanks {
 }
 
 @media screen and (min-width: 1400px) {
-  html body main section#hero {
-    padding-bottom: 20vh;
-  }
   html body main section#hero h1 {
     font-size: 4em;
+  }
+  html body main section#hero svg {
+    -ms-flex-item-align: end;
+        -ms-grid-row-align: end;
+        align-self: end;
+    -webkit-transform: translateX(50px);
+            transform: translateX(50px);
   }
   html body main section#portfolio article:nth-child(even) {
     margin-right: 150px;

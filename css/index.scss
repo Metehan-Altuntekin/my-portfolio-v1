@@ -44,7 +44,7 @@ html {
     }
     main {
       section#hero {
-        height: 100vh;
+        min-height: 100vh;
         padding-bottom: 10vh;
         padding-top: 10vh;
         gap: 5%;
@@ -192,13 +192,13 @@ html {
         justify-items: center;
         align-items: center;
 
-        grid-template-columns: 0 50% 50% 0;
+        grid-template-columns: repeat(2, 1fr);
         grid-template-areas:
-          "... head head ..."
-          "... img  img  ..."
-          "... info info ..."
-          "... prog prog ..."
-          "... butt butt ...";
+          " head head "
+          " img  img  "
+          " info info "
+          " prog prog "
+          " butt butt ";
         gap: 40px;
 
         border-radius: 0 0 50px 50px;
@@ -452,7 +452,7 @@ html {
   }
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 800px) and(orientation: landscape) {
   html {
     body {
       header {
@@ -472,15 +472,18 @@ html {
           justify-items: start;
           align-content: start;
           align-items: start;
-          grid-template-rows: repeat(4, 1fr);
+          padding-top: 100px;
+
+          grid-template-rows: repeat(3, minmax(1fr));
           grid-template-areas:
-            "head head head img  img  img "
+           // "head head head img  img  img "
             "head head head img  img  img "
             "text text text img  img  img"
             "link link link img  img  img ";
           h1 {
           }
           svg {
+            //align-self: center;
           }
           a{
             justify-self: start;
@@ -517,10 +520,10 @@ html {
         }
         section#about {
           grid-template-areas:
-            ".... head head ...."
-            ".... img  info ...."
-            ".... prog prog ...."
-            ".... cert cert ....";
+            " head head "
+            " img  info "
+            " prog prog "
+            " cert cert ";
           & > img {
             height: 100%;
             justify-self: end;
@@ -551,9 +554,14 @@ html {
     body {
       main {
         section#hero{
-          padding-bottom: 20vh;
+          //padding-bottom: 20vh;
+          
           h1{
             font-size: 4em;
+          }
+          svg{
+            align-self: end;
+            transform: translateX(50px);
           }
         }
         section#portfolio {
