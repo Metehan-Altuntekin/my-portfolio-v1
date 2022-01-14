@@ -30,7 +30,7 @@
   <main>
     <section id="hero" class="side-gap">
       <h1>I design and build web face of your business</h1>
-      <svg width="100%" viewBox="0 0 1970 1426" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg id="hero-illustration" width="100%" viewBox="0 0 1970 1426" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
           d="M38 1149.5V1425.5L1543.5 1426V1044H1617.5V979H1270.5V883.5H1312.5V854.5H966V883.5H1009.5V1083L614 1087.5V997.5H643.5V969H254.5V997.5H282V1087.5H0V1149.5H38Z"
           fill="#925EE6" fill-opacity="0.15" />
@@ -157,13 +157,25 @@
     </section>
     <section id="portfolio" class="side-gap">
       <h1 class="section">Portfolio</h1>
-      <article>
-        <h1 class="article">Calculator <button class="info">i</button></h1>
+      <article class="side-gap">
+        <h1 class="article mobile">Calculator <button class="info">i</button></h1>
         <iframe src="https://metehan-altuntekin.github.io/calculator" frameborder="0"></iframe>
-      </article>
+        <div class="extract desktop">
+          <h1>Calculator</h1>
+          <p>Actually just a simple web app i made for practicing JavaScript. It doesn’t do anything new. Primarily targeted use is to integrate in other websites. </p>
+          <a href="https://github.com/Metehan-Altuntekin/calculator"><img src="./media/icons/github.svg" alt="GitHub Logo"><span>Repository Of This Project</span></a>
+          <a href="https://metehan-altuntekin.github.io"><img src="./media/icons/open-external-link.svg" alt="Open In New Tab Icon"><span>Open In New Tab</span></a>
+        </div>
+      </article class="side-gap">
       <article>
         <h1 class="article">Square Stars <button class="info">i</button></h1>
         <iframe src="https://metehan-altuntekin.github.io/Square-Stars" frameborder="0"></iframe>
+        <div class="extract desktop">
+          <h1>Square Stars</h1>
+          <p>A configurable animation. Stars in shape of square come to existence and they animate. Then they spend their life and die... </p>
+          <a href="https://github.com/Metehan-Altuntekin/Square-Stars"><img src="./media/icons/github.svg" alt="GitHub Logo"><span>Repository Of This Project</span></a>
+          <a href="https://metehan-altuntekin.github.io"><img src="./media/icons/open-external-link.svg" alt="Open In New Tab Icon"><span>Open In New Tab</span></a>
+        </div>
       </article>
       <a href="#" class="primary">See More</a>
     </section>

@@ -24,6 +24,11 @@ body {
   background-color: #FAF7FF;
 }
 
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
 .side-gap {
   padding: 0px 10px;
 }
@@ -76,9 +81,6 @@ h1.article {
   height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 button.info {

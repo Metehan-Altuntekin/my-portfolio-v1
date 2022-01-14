@@ -38,7 +38,7 @@ html {
         a {
           color: $salmon-vivid;
           font-variant: small-caps;
-          font-size: 1em;
+          font-size: 1rem;
         }
       }
     }
@@ -46,7 +46,7 @@ html {
       section#hero {
         min-height: 100vh;
         padding-bottom: 10vh;
-        padding-top: 10vh;
+        padding-top: 50px;
         gap: 5%;
         display: grid;
         align-content: center;
@@ -65,7 +65,7 @@ html {
           grid-area: head;
           color: #222;
           font-weight: 700;
-          font-size: 1.8em;
+          font-size: 1.8rem;
           line-height: 1em;
           align-self: end;
         }
@@ -76,7 +76,7 @@ html {
         p {
           grid-area: text;
           font-family: "Josefin Slab", serif;
-          font-size: 1em;
+          font-size: 1rem;
           line-height: 1.5em;
           align-self: center;
           max-width: 400px;
@@ -103,21 +103,66 @@ html {
         display: flex;
         flex-direction: column;
         padding: 0;
+
         article {
           height: 500px;
           background-color: $salmon-bg;
           position: relative;
           display: flex;
-          flex-direction: column;
           align-items: center;
+          flex-wrap: wrap;
 
+          > h1{
+            width: 100%;
+          }
+          iframe, 
+          .extract{
+            border-radius: 30px;
+            border: 7px solid $salmon-border;
+
+          }
           iframe {
             width: 80%;
+            max-width: 500px;
             height: 80%;
-            justify-self: center;
-            margin: 0 auto;
-            border: 7px solid $salmon-border;
-            border-radius: 30px;
+            align-self: center; 
+            justify-self: center;   
+            margin: 0 auto;        
+          }
+          .extract{
+            display: none;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            background-color: $salmon-bg-light;
+            border-radius: 100px;
+            padding: 20px;
+            height: 80%;
+            h1{
+              width: 100%;
+              margin-bottom: 1em;
+              font-family: "Josefin Slab";
+              font-size: 1.5rem;
+            }
+            p{
+              width: auto;
+              margin-right: 30%;
+              align-self: flex-start;
+              line-height: 1.5em;
+            }
+            a{
+              display: flex;
+              align-items: center;
+              width: max-content;
+              align-self: flex-end;
+              margin-right: 2em;
+              gap: 0.6em;
+              img{
+                height: 1.4rem;
+              }
+              span{
+                font-size: 0.85rem;
+              }
+            }
           }
           &:nth-child(even) {
             border-radius: 0 100px 50px 0;
@@ -128,6 +173,20 @@ html {
             border-radius: 100px 0px 0px 50px;
             margin-left: 10px;
             margin-bottom: 10px;
+
+            .extract{
+              justify-content: flex-end;
+              *{
+                border: 1px dashed crimson;
+              }
+              h1{
+                text-align: end;
+
+              }
+              p{
+                align-self: flex-end;
+              }
+            }
           }
         }
 
@@ -161,12 +220,12 @@ html {
           }
           h1 {
             padding: 10px 0 20px 0;
-            font-size: 1.5em;
+            font-size: 1.5rem;
             color: $salmon-vivid;
           }
           p {
             padding: 10px 20px 30px;
-            font-size: 1em;
+            font-size: 1rem;
             line-height: 1.5em;
             font-weight: 300;
           }
@@ -318,7 +377,7 @@ html {
           border-left: 1px solid rgba($color: #fff, $alpha: 0.07);
           h1 {
             color: rgba(255, 255, 255, 0.25);
-            font-size: 0.7em;
+            font-size: 0.7rem;
             letter-spacing: 0.4em;
             font-variant: small-caps;
             font-weight: 500;
@@ -356,12 +415,12 @@ html {
               }
               span {
                 color: #fff;
-                font-size: 0.8em;
+                font-size: 0.8rem;
                 letter-spacing: 0.02em;
                 div {
                   display: inline-block;
                   padding-right: 2px;
-                  font-size: 1em;
+                  font-size: 1rem;
                   color: inherit;
                 }
               }
@@ -381,7 +440,7 @@ html {
         background: transparent;
         font-family: "Josefin Slab", serif;
         color: $salmon;
-        font-size: 1.2em;
+        font-size: 1.2rem;
         text-decoration: underline 1px;
         align-self: flex-end;
       }
@@ -397,7 +456,7 @@ html {
       main {
         section#hero {
           h1 {
-            font-size: 3em;
+            font-size: 3rem;
           }
         }
         section#portfolio {
@@ -452,7 +511,7 @@ html {
   }
 }
 
-@media screen and (min-width: 800px) and(orientation: landscape) {
+@media screen and (min-width: 800px) and (orientation: landscape) {
   html {
     body {
       header {
@@ -492,13 +551,52 @@ html {
         }
         section#portfolio {
           article {
+            justify-content: space-evenly;
+            align-items: center;
+            
+            > h1{
+              width: 100%;
+              text-align: center;
+              display: none;
+            }
+            .info{
+              display: none;
+            }
+            iframe{
+              max-width: 45%;
+              height: 80%;
+            }
+            .extract{
+              display: flex;
+              max-width: 50%;
+            }
             &:nth-child(even) {
               margin-right: 40px;
               margin-bottom: 40px;
+              border-top-right-radius: 1000px;
+              border-bottom-right-radius: 300px;
+              iframe{
+                justify-self:flex-start;
+              }
+              .extract{
+                border-top-right-radius: 1000px;
+                border-bottom-right-radius: 300px;
+                
+              }
             }
             &:nth-child(odd) {
               margin-left: 40px;
               margin-bottom: 40px;
+              border-top-left-radius: 1000px;
+              border-bottom-left-radius: 300px;
+              iframe{
+                order: 4;
+                
+              }
+              .extract{
+                border-top-left-radius: 1000px;
+                border-bottom-left-radius: 300px;
+              }
             }
           }
         }
@@ -557,7 +655,7 @@ html {
           //padding-bottom: 20vh;
           
           h1{
-            font-size: 4em;
+            font-size: 4rem;
           }
           svg{
             align-self: end;

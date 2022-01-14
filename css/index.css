@@ -55,13 +55,13 @@ html body header nav {
 html body header nav a {
   color: #FF5F1B;
   font-variant: small-caps;
-  font-size: 1em;
+  font-size: 1rem;
 }
 
 html body main section#hero {
   min-height: 100vh;
   padding-bottom: 10vh;
-  padding-top: 10vh;
+  padding-top: 50px;
   gap: 5%;
   display: -ms-grid;
   display: grid;
@@ -87,7 +87,7 @@ html body main section#hero h1 {
   grid-area: head;
   color: #222;
   font-weight: 700;
-  font-size: 1.8em;
+  font-size: 1.8rem;
   line-height: 1em;
   -ms-flex-item-align: end;
       align-self: end;
@@ -108,7 +108,7 @@ html body main section#hero p {
   -ms-grid-column-span: 5;
   grid-area: text;
   font-family: "Josefin Slab", serif;
-  font-size: 1em;
+  font-size: 1rem;
   line-height: 1.5em;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
@@ -160,23 +160,85 @@ html body main section#portfolio article {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+html body main section#portfolio article > h1 {
+  width: 100%;
+}
+
+html body main section#portfolio article iframe,
+html body main section#portfolio article .extract {
+  border-radius: 30px;
+  border: 7px solid #FEA47F;
 }
 
 html body main section#portfolio article iframe {
   width: 80%;
+  max-width: 500px;
   height: 80%;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
   -ms-grid-column-align: center;
       justify-self: center;
   margin: 0 auto;
-  border: 7px solid #FEA47F;
-  border-radius: 30px;
+}
+
+html body main section#portfolio article .extract {
+  display: none;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  background-color: #FFEDE7;
+  border-radius: 100px;
+  padding: 20px;
+  height: 80%;
+}
+
+html body main section#portfolio article .extract h1 {
+  width: 100%;
+  margin-bottom: 1em;
+  font-family: "Josefin Slab";
+  font-size: 1.5rem;
+}
+
+html body main section#portfolio article .extract p {
+  width: auto;
+  margin-right: 30%;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  line-height: 1.5em;
+}
+
+html body main section#portfolio article .extract a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  margin-right: 2em;
+  gap: 0.6em;
+}
+
+html body main section#portfolio article .extract a img {
+  height: 1.4rem;
+}
+
+html body main section#portfolio article .extract a span {
+  font-size: 0.85rem;
 }
 
 html body main section#portfolio article:nth-child(even) {
@@ -189,6 +251,25 @@ html body main section#portfolio article:nth-child(odd) {
   border-radius: 100px 0px 0px 50px;
   margin-left: 10px;
   margin-bottom: 10px;
+}
+
+html body main section#portfolio article:nth-child(odd) .extract {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+html body main section#portfolio article:nth-child(odd) .extract * {
+  border: 1px dashed crimson;
+}
+
+html body main section#portfolio article:nth-child(odd) .extract h1 {
+  text-align: end;
+}
+
+html body main section#portfolio article:nth-child(odd) .extract p {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
 }
 
 html body main section#portfolio a {
@@ -245,13 +326,13 @@ html body main section#services article img {
 
 html body main section#services article h1 {
   padding: 10px 0 20px 0;
-  font-size: 1.5em;
+  font-size: 1.5rem;
   color: #FF5F1B;
 }
 
 html body main section#services article p {
   padding: 10px 20px 30px;
-  font-size: 1em;
+  font-size: 1rem;
   line-height: 1.5em;
   font-weight: 300;
 }
@@ -480,7 +561,7 @@ html body main section#contact article {
 
 html body main section#contact article h1 {
   color: rgba(255, 255, 255, 0.25);
-  font-size: 0.7em;
+  font-size: 0.7rem;
   letter-spacing: 0.4em;
   font-variant: small-caps;
   font-weight: 500;
@@ -532,14 +613,14 @@ html body main section#contact article ul li img {
 
 html body main section#contact article ul li span {
   color: #fff;
-  font-size: 0.8em;
+  font-size: 0.8rem;
   letter-spacing: 0.02em;
 }
 
 html body main section#contact article ul li span div {
   display: inline-block;
   padding-right: 2px;
-  font-size: 1em;
+  font-size: 1rem;
   color: inherit;
 }
 
@@ -562,7 +643,7 @@ html body footer button.thanks {
   background: transparent;
   font-family: "Josefin Slab", serif;
   color: #FEA47F;
-  font-size: 1.2em;
+  font-size: 1.2rem;
   -webkit-text-decoration: underline 1px;
           text-decoration: underline 1px;
   -ms-flex-item-align: end;
@@ -574,7 +655,7 @@ html body footer button.thanks {
     font-size: 16px;
   }
   html body main section#hero h1 {
-    font-size: 3em;
+    font-size: 3rem;
   }
   html body main section#portfolio article:nth-child(even) {
     margin-right: 20px;
@@ -639,13 +720,59 @@ html body footer button.thanks {
         justify-self: start;
     margin: unset;
   }
+  html body main section#portfolio article {
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  html body main section#portfolio article > h1 {
+    width: 100%;
+    text-align: center;
+    display: none;
+  }
+  html body main section#portfolio article .info {
+    display: none;
+  }
+  html body main section#portfolio article iframe {
+    max-width: 45%;
+    height: 80%;
+  }
+  html body main section#portfolio article .extract {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    max-width: 50%;
+  }
   html body main section#portfolio article:nth-child(even) {
     margin-right: 40px;
     margin-bottom: 40px;
+    border-top-right-radius: 1000px;
+    border-bottom-right-radius: 300px;
+  }
+  html body main section#portfolio article:nth-child(even) iframe {
+    justify-self: flex-start;
+  }
+  html body main section#portfolio article:nth-child(even) .extract {
+    border-top-right-radius: 1000px;
+    border-bottom-right-radius: 300px;
   }
   html body main section#portfolio article:nth-child(odd) {
     margin-left: 40px;
     margin-bottom: 40px;
+    border-top-left-radius: 1000px;
+    border-bottom-left-radius: 300px;
+  }
+  html body main section#portfolio article:nth-child(odd) iframe {
+    -webkit-box-ordinal-group: 5;
+        -ms-flex-order: 4;
+            order: 4;
+  }
+  html body main section#portfolio article:nth-child(odd) .extract {
+    border-top-left-radius: 1000px;
+    border-bottom-left-radius: 300px;
   }
   html body main section#services {
     -webkit-box-orient: horizontal;
@@ -705,7 +832,7 @@ html body footer button.thanks {
 
 @media screen and (min-width: 1400px) {
   html body main section#hero h1 {
-    font-size: 4em;
+    font-size: 4rem;
   }
   html body main section#hero svg {
     -ms-flex-item-align: end;
