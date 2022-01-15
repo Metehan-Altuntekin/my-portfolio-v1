@@ -34,7 +34,7 @@ html {
         display: none;
         align-items: center;
         margin-left: auto;
-        gap: 5vw;
+        gap: 3vw;
         a {
           color: $salmon-vivid;
           font-variant: small-caps;
@@ -44,10 +44,9 @@ html {
     }
     main {
       section#hero {
-        min-height: 100vh;
-        padding-bottom: 10vh;
+        height: 100vh;
         padding-top: 50px;
-        gap: 5%;
+        gap: 5vh;
         display: grid;
         align-content: center;
         justify-content: center;
@@ -111,7 +110,7 @@ html {
           display: flex;
           align-items: center;
           flex-wrap: wrap;
-
+          padding-bottom: 30px;
           > h1{
             width: 100%;
           }
@@ -144,8 +143,7 @@ html {
               font-size: 1.5rem;
             }
             p{
-              width: auto;
-              margin-right: 30%;
+              width: 75%;
               align-self: flex-start;
               line-height: 1.5em;
             }
@@ -177,14 +175,12 @@ html {
             .extract{
               justify-content: flex-end;
               *{
-                border: 1px dashed crimson;
               }
               h1{
                 text-align: end;
-
               }
               p{
-                align-self: flex-end;
+                text-align: end;
               }
             }
           }
@@ -511,7 +507,7 @@ html {
   }
 }
 
-@media screen and (min-width: 800px) and (orientation: landscape) {
+@media screen and (min-width: 1000px) and (orientation: landscape) {
   html {
     body {
       header {
@@ -553,7 +549,7 @@ html {
           article {
             justify-content: space-evenly;
             align-items: center;
-            
+            padding-bottom: unset;
             > h1{
               width: 100%;
               text-align: center;
@@ -568,7 +564,7 @@ html {
             }
             .extract{
               display: flex;
-              max-width: 50%;
+              max-width: 45%;
             }
             &:nth-child(even) {
               margin-right: 40px;
@@ -595,7 +591,7 @@ html {
               }
               .extract{
                 border-top-left-radius: 1000px;
-                border-bottom-left-radius: 300px;
+                border-bottom-left-radius: 300px; 
               }
             }
           }
