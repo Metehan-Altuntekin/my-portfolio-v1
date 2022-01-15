@@ -1,0 +1,49 @@
+.bg-area {
+  position: fixed;
+  z-index: -99;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.bg-particle {
+  position: absolute;
+  width: 10vw;
+  -webkit-animation: move infinite 5s;
+          animation: move infinite 5s;
+}
+
+@-webkit-keyframes move {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateX(20vw);
+            transform: translateX(20vw);
+    opacity: 0;
+  }
+}
+
+@keyframes move {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateX(20vw);
+            transform: translateX(20vw);
+    opacity: 0;
+  }
+}
+/*# sourceMappingURL=bg.css.map */
