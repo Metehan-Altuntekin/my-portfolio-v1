@@ -130,12 +130,16 @@ html {
           }
           .extract{
             display: none;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
             flex-wrap: wrap;
             align-items: flex-start;
             background-color: $salmon-bg-light;
-            border-radius: 100px;
+            border-radius: 0;
             padding: 20px;
-            height: 80%;
             h1{
               width: 100%;
               margin-bottom: 1em;
@@ -172,17 +176,7 @@ html {
             margin-left: 10px;
             margin-bottom: 10px;
 
-            .extract{
-              justify-content: flex-end;
-              *{
-              }
-              h1{
-                text-align: end;
-              }
-              p{
-                text-align: end;
-              }
-            }
+            
           }
         }
 
@@ -265,7 +259,7 @@ html {
         & > h1 {
           grid-area: head;
         }
-        & > img {
+        & > img{
           grid-area: img;
           object-fit: cover;
           border-radius: 30px;
@@ -321,24 +315,35 @@ html {
           &.certificates {
             grid-area: cert;
             display: none;
-            ul {
-              list-style-type: none;
-              display: flex;
-              flex-direction: row;
-              align-items: center;
-              justify-content: space-between;
+            .container{
               background-color: $salmon-bg-light;
-              padding: 20px 10px;
-              border-radius: 20px;
-              gap: 20px;
-              overflow-x: auto;
+              border-radius: 30px;
               width: 100%;
-            }
-            img {
-              display: inline-block;
-              background-color: pink;
-              min-width: 350px;
-              min-height: 200px;
+              overflow-x: auto;
+              &::-webkit-scrollbar{
+                width: 10px;
+              }
+              ul{
+                list-style-type: none;
+                padding: 20px;
+                width: max-content;
+                display: flex;
+                flex-direction: row;
+                gap: 20px;
+                
+                li{
+                  height: 250px;
+                  //border: 7px solid rgba($salmon-border, $alpha: 0.4);
+                  border-radius: 10px;
+                  a{
+                    height: 100%;
+                    width: 100%;
+                    img{
+                      object-fit: cover;
+                    }
+                  }
+                }
+              }
             }
           }
         }
@@ -564,7 +569,14 @@ html {
             }
             .extract{
               display: flex;
+              position: static;
+              top: unset;
+              left: unset;
               max-width: 45%;
+              height: 80%;
+
+              border-radius: 100px;
+
             }
             &:nth-child(even) {
               margin-right: 40px;
@@ -592,6 +604,16 @@ html {
               .extract{
                 border-top-left-radius: 1000px;
                 border-bottom-left-radius: 300px; 
+                justify-content: flex-end;
+                h1{
+                  text-align: end;
+                }
+                p{
+                  text-align: end;
+                }
+              }
+              .extract{
+               
               }
             }
           }

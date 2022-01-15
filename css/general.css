@@ -82,18 +82,4 @@ h1.article {
   height: -moz-min-content;
   height: min-content;
 }
-
-button.info {
-  width: 16px;
-  height: 16px;
-  border-radius: 1000px;
-  font-family: "Roboto", serif;
-  font-size: 12px;
-  font-weight: 900;
-  font-family: black;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-  margin-left: 10px;
-}
 /*# sourceMappingURL=general.css.map */

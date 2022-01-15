@@ -191,15 +191,19 @@ html body main section#portfolio article iframe {
 
 html body main section#portfolio article .extract {
   display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
   background-color: #FFEDE7;
-  border-radius: 100px;
+  border-radius: 0;
   padding: 20px;
-  height: 80%;
 }
 
 html body main section#portfolio article .extract h1 {
@@ -250,20 +254,6 @@ html body main section#portfolio article:nth-child(odd) {
   border-radius: 100px 0px 0px 50px;
   margin-left: 10px;
   margin-bottom: 10px;
-}
-
-html body main section#portfolio article:nth-child(odd) .extract {
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-}
-
-html body main section#portfolio article:nth-child(odd) .extract h1 {
-  text-align: end;
-}
-
-html body main section#portfolio article:nth-child(odd) .extract p {
-  text-align: end;
 }
 
 html body main section#portfolio a {
@@ -471,8 +461,23 @@ html body main section#about article.certificates {
   display: none;
 }
 
-html body main section#about article.certificates ul {
+html body main section#about article.certificates .container {
+  background-color: #FFEDE7;
+  border-radius: 30px;
+  width: 100%;
+  overflow-x: auto;
+}
+
+html body main section#about article.certificates .container::-webkit-scrollbar {
+  width: 10px;
+}
+
+html body main section#about article.certificates .container ul {
   list-style-type: none;
+  padding: 20px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -480,25 +485,22 @@ html body main section#about article.certificates ul {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  background-color: #FFEDE7;
-  padding: 20px 10px;
-  border-radius: 20px;
   gap: 20px;
-  overflow-x: auto;
+}
+
+html body main section#about article.certificates .container ul li {
+  height: 250px;
+  border-radius: 10px;
+}
+
+html body main section#about article.certificates .container ul li a {
+  height: 100%;
   width: 100%;
 }
 
-html body main section#about article.certificates img {
-  display: inline-block;
-  background-color: pink;
-  min-width: 350px;
-  min-height: 200px;
+html body main section#about article.certificates .container ul li a img {
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 html body main section#about a {
@@ -739,7 +741,12 @@ html body footer button.thanks {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    position: static;
+    top: unset;
+    left: unset;
     max-width: 45%;
+    height: 80%;
+    border-radius: 100px;
   }
   html body main section#portfolio article:nth-child(even) {
     margin-right: 40px;
@@ -768,6 +775,15 @@ html body footer button.thanks {
   html body main section#portfolio article:nth-child(odd) .extract {
     border-top-left-radius: 1000px;
     border-bottom-left-radius: 300px;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  html body main section#portfolio article:nth-child(odd) .extract h1 {
+    text-align: end;
+  }
+  html body main section#portfolio article:nth-child(odd) .extract p {
+    text-align: end;
   }
   html body main section#services {
     -webkit-box-orient: horizontal;
