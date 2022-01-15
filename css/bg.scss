@@ -10,8 +10,8 @@
 .bg-particle{
   position: absolute;
   width: 10vw;
-
-  animation: move infinite 5s;
+  
+  animation: move infinite 15s linear;
 }
 
 @keyframes move {
@@ -23,7 +23,7 @@
     opacity: 1;
   }
   100%{
-    transform: translateX(20vw);
+    transform: translateX(105vw);
     opacity: 0;
   }
 
