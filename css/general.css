@@ -29,6 +29,10 @@ img {
   max-height: 100%;
 }
 
+strong {
+  color: #FF5F1B;
+}
+
 .side-gap {
   padding: 0px 10px;
 }

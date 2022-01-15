@@ -113,6 +113,11 @@ html {
           padding-bottom: 30px;
           > h1{
             width: 100%;
+            a{
+              font-family: inherit;
+              font-size: inherit;
+              font-weight: inherit;
+            }
           }
           iframe, 
           .extract{
@@ -286,6 +291,12 @@ html {
               padding: 30px 10px;
               font-weight: 300;
               line-height: 1.6em;
+
+              span{
+                opacity: 0.65;
+                display: block;
+                margin-top: 1em;
+              }
             }
           }
 
@@ -316,7 +327,7 @@ html {
             grid-area: cert;
             display: none;
             .container{
-              background-color: $salmon-bg-light;
+              background-color: #876DB2;
               border-radius: 30px;
               width: 100%;
               overflow-x: auto;
@@ -325,7 +336,7 @@ html {
               }
               ul{
                 list-style-type: none;
-                padding: 20px;
+                padding: 30px;
                 width: max-content;
                 display: flex;
                 flex-direction: row;
@@ -670,7 +681,7 @@ html {
     body {
       main {
         section#hero{
-          //padding-bottom: 20vh;
+          padding-top: 20vh;
           
           h1{
             font-size: 4rem;
@@ -689,6 +700,25 @@ html {
             &:nth-child(odd) {
               margin-left: 150px;
               margin-bottom: 150px;
+            }
+          }
+        }
+        section#about{
+          gap: 50px;
+          > img{
+            max-width: 500px;
+          }
+          article{
+            h1{
+              padding-left: 70px;
+            }
+            &.info{
+              max-width: 500px;
+              p{}
+            }
+            &.programs,
+            &.certificates{
+              width: 1050px;
             }
           }
         }

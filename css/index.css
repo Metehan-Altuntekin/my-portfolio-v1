@@ -171,6 +171,12 @@ html body main section#portfolio article > h1 {
   width: 100%;
 }
 
+html body main section#portfolio article > h1 a {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
 html body main section#portfolio article iframe,
 html body main section#portfolio article .extract {
   border-radius: 30px;
@@ -421,6 +427,12 @@ html body main section#about article.info p {
   line-height: 1.6em;
 }
 
+html body main section#about article.info p span {
+  opacity: 0.65;
+  display: block;
+  margin-top: 1em;
+}
+
 html body main section#about article.programs {
   -ms-grid-row: 4;
   -ms-grid-column: 1;
@@ -462,7 +474,7 @@ html body main section#about article.certificates {
 }
 
 html body main section#about article.certificates .container {
-  background-color: #FFEDE7;
+  background-color: #876DB2;
   border-radius: 30px;
   width: 100%;
   overflow-x: auto;
@@ -474,7 +486,7 @@ html body main section#about article.certificates .container::-webkit-scrollbar 
 
 html body main section#about article.certificates .container ul {
   list-style-type: none;
-  padding: 20px;
+  padding: 30px;
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
@@ -842,6 +854,9 @@ html body footer button.thanks {
 }
 
 @media screen and (min-width: 1400px) {
+  html body main section#hero {
+    padding-top: 20vh;
+  }
   html body main section#hero h1 {
     font-size: 4rem;
   }
@@ -859,6 +874,21 @@ html body footer button.thanks {
   html body main section#portfolio article:nth-child(odd) {
     margin-left: 150px;
     margin-bottom: 150px;
+  }
+  html body main section#about {
+    gap: 50px;
+  }
+  html body main section#about > img {
+    max-width: 500px;
+  }
+  html body main section#about article h1 {
+    padding-left: 70px;
+  }
+  html body main section#about article.info {
+    max-width: 500px;
+  }
+  html body main section#about article.programs, html body main section#about article.certificates {
+    width: 1050px;
   }
 }
 /*# sourceMappingURL=index.css.map */
