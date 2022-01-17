@@ -10,7 +10,7 @@
 
 .bg-particle {
   position: absolute;
-  width: 10vw;
+  width: 5vw;
   -webkit-animation: move infinite 15s linear;
           animation: move infinite 15s linear;
 }
@@ -25,8 +25,8 @@
     opacity: 1;
   }
   100% {
-    -webkit-transform: translateX(105vw);
-            transform: translateX(105vw);
+    -webkit-transform: translateX(1920px);
+            transform: translateX(1920px);
     opacity: 0;
   }
 }
@@ -41,8 +41,8 @@
     opacity: 1;
   }
   100% {
-    -webkit-transform: translateX(105vw);
-            transform: translateX(105vw);
+    -webkit-transform: translateX(1920px);
+            transform: translateX(1920px);
     opacity: 0;
   }
 }

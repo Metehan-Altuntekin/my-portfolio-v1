@@ -475,7 +475,7 @@ html body main section#about article.certificates {
 }
 
 html body main section#about article.certificates .container {
-  background-color: #876DB2;
+  background-color: #876db2;
   border-radius: 30px;
   width: 100%;
   overflow-x: auto;
@@ -622,15 +622,19 @@ html body main section#contact article ul li img {
 
 html body main section#contact article ul li span {
   color: #fff;
+}
+
+html body main section#contact article ul li span:not(.material-icons) {
   font-size: 0.8rem;
-  letter-spacing: 0.02em;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 html body main section#contact article ul li span div {
   display: inline-block;
   padding-right: 2px;
-  font-size: 1rem;
+  font-size: inherit;
   color: inherit;
+  font-family: inherit;
 }
 
 html body footer {
