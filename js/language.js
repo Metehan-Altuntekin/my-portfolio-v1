@@ -6,5 +6,9 @@ if(navigator.language == "tr-TR"){
 }
 
 function ChangeLanguage(language){
-  document.documentElement.lang = language
+ 
+  document.documentElement.lang = language //Change document's lang attribute
+
+  
+
 }
