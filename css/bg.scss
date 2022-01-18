@@ -9,7 +9,7 @@
 }
 .bg-particle{
   position: absolute;
-  width: 5vw;
+  width: clamp(50px, 5vw, 200px);
   
   animation: move infinite 15s linear;
 }
