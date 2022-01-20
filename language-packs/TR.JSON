@@ -1,15 +1,13 @@
 {
-  "html": {
-    "head": {
-      "name": "Web Yazılımcı ve Tasarımcı Metehan Altuntekin'in Portfolyo Sitesi",
-      "author": null,
-      "keywords": "yazılım, yazılımcı, internet sitesi, geliştirici, freelancer, tasarımcı",
-      "title": null
+  "querySelectorAll('html')[0]": {
+    "querySelectorAll('head')[0]": {
+      "querySelectorAll(`[name = 'description']`)[0]": "setAttribute('content','Web Yazılımcı ve Tasarımcı Metehan Altuntekin in Portfolyo Sitesi')"
+      
     },
-    "body": {
-      "header": {
-        "nav": {
-          "href = '#portfolio'": "Portfolyo",
+    "querySelectorAll('body')[0]": {
+      "querySelectorAll('header')[0]": {
+        "querySelectorAll('nav')[0]": {
+          "querySelectorAll(`a[href = '#portfolio']`)[0]": "innerHTML = 'Portfolyo'",
           "href = '#services'": "Hizmetler",
           "href = '#about'": "Hakkımda",
           "href = '#contact'": "İletişim"

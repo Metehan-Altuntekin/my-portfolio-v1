@@ -13,7 +13,7 @@ function ChangeLanguage(language) {
     packAdress = "../language-packs/TR.JSON"
   }
 
-  GetLangPack(packAdress).then(function (value) { ApplyLangPack(value) })
+  GetLangPack(packAdress).then(function (pack) { ApplyLangPack(pack) })
 
 }
 
@@ -28,6 +28,38 @@ async function GetLangPack(address) {
 
 function ApplyLangPack(pack) {
   console.log(pack)
-  console.log(pack.html.body.main.hero)
+  //console.log(Object.entries(pack)[0])
+  for (let a in pack) {
+    if (typeof pack[a] !== 'object') {
+      window[`${document}.${a}`]
+    } else {
+      for (let b in pack[a]) {
+        if (typeof pack[a][b] !== 'object') {
+        } else {
+          for (let c in pack[a][b]) {
+            if (typeof pack[a][b][c] !== 'object') {
+              console.log(`document.${a}.${b}.${c}.${pack[a][b][c]} big chungus`)
+              eval(`document.${a}.${b}.${c}.${pack[a][b][c]}`)
+            } else {
+              for (let d in pack[a][b][c]) {
+                if (typeof pack[a][b][c][d] !== 'object') {
+                  console.log(`document.${a}.${b}.${c}.${d}.${pack[a][b][c][d]} big chungus`)
+                  eval(`document.${a}.${b}.${c}.${d}.${pack[a][b][c][d]}`)
+                } else {
+                  for (let e in pack[a][b][c][d]) {
+                    if (typeof pack[a][b][c][d][e] !== 'object') {
+                      console.log(`document.${a}.${b}.${c}.${d}.${e}.${pack[a][b][c][d][e]} big chungus`)
+                      eval(`document.${a}.${b}.${c}.${d}.${e}.${pack[a][b][c][d][e]}`)
+                    } else {
 
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
