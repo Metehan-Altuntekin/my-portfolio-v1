@@ -20,9 +20,9 @@ function ChangeLanguage(language) {
       //Need to create animations again
       CreateBg(document.getElementById("hero"))
       CreateBg(document.getElementById("portfolio"))
-      CreateBg(document.getElementById("services"), "white")
+      CreateBg(document.getElementById("services"), "white", "0.15")
       CreateBg(document.getElementById("about"))
-      CreateBg(document.getElementById("contact"), "white")
+      CreateBg(document.getElementById("contact"), "white", "0.03")
     })
 
 }
