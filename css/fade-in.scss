@@ -1,0 +1,28 @@
+.fade-in{
+  opacity: 0;
+  transition: 0.34s ease-out;
+}
+
+.slide-in{
+
+}
+.from-left{
+  transform: translateX(-20%);
+}
+.from-right{
+  transform: translateX(20%);
+}
+.from-bottom{
+  transform: translateY(20%);
+
+}
+.from-top{
+  transform: translateY(-20%);
+
+}
+
+.appear{  //When elements come into viewport
+  opacity: 1;
+  transform: translate(0px, 0px);
+  
+}

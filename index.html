@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="./css/general.css">
   <link rel="stylesheet" href="./css/index.css">
   <link rel="stylesheet" href="./css/bg.css">
+  <link rel="stylesheet" href="./css/fade-in.css">
 
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
@@ -31,8 +32,8 @@
   </header>
   <main>
     <section id="hero" class="side-gap">
-      <h1>I design and build web face of your business</h1>
-      <svg id="hero-illustration" width="100%" viewBox="0 0 1970 1426" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <h1 class="fade-in slider from-left">I design and build web face of your business</h1>
+      <svg class="fade-in slider from-right" id="hero-illustration" width="100%" viewBox="0 0 1970 1426" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
           d="M38 1149.5V1425.5L1543.5 1426V1044H1617.5V979H1270.5V883.5H1312.5V854.5H966V883.5H1009.5V1083L614 1087.5V997.5H643.5V969H254.5V997.5H282V1087.5H0V1149.5H38Z"
           fill="#925EE6" fill-opacity="0.15" />
@@ -151,18 +152,18 @@
           </filter>
         </defs>
       </svg>
-      <p>
+      <p class="fade-in slider from-bottom">
         I am a <span>web developer</span> & a <span>UI/UX designer</span> from Turkey. I design and build your website
         with high quality for <span>lower prices</span>.
       </p>
-      <a href="#portfolio" class="primary">See My Work</a>
+      <a href="#portfolio" class="primary fade-in slider from-bottom">See My Work</a>
     </section>
     <section id="portfolio" class="side-gap">
       <h1 class="section">Portfolio</h1>
-      <article class="side-gap">
+      <article class="side-gap fade-in slider from-left">
         <h1 class="article mobile"><a href="https://metehan-altuntekin.github.io/calculator"
             target="_blank">Calculator</a></h1>
-        <iframe src="https://metehan-altuntekin.github.io/calculator" frameborder="0"></iframe>
+        <iframe loading="lazy" src="https://metehan-altuntekin.github.io/calculator" frameborder="0"></iframe>
         <div class="extract desktop">
           <h1>Calculator</h1>
           <p>Actually just a simple web app i made for practicing JavaScript. It doesn’t do anything new. Primarily
@@ -173,10 +174,10 @@
               alt="Open In New Tab Icon"><span>Open In New Tab</span></a>
         </div>
       </article>
-      <article class="side-gap">
+      <article class="side-gap fade-in slider from-right">
         <h1 class="article"><a href="https://metehan-altuntekin.github.io/Square-Stars" target="_blank">Square Stars</a>
         </h1>
-        <iframe src="https://metehan-altuntekin.github.io/Square-Stars" frameborder="0"></iframe>
+        <iframe loading="lazy" src="https://metehan-altuntekin.github.io/Square-Stars" frameborder="0"></iframe>
         <div class="extract desktop">
           <h1>Square Stars</h1>
           <p>A configurable animation. Stars in shape of square come to existence and they animate. Then they spend
@@ -191,13 +192,13 @@
     </section>
     <section id="services" class="side-gap">
       <h1 class="section">Services</h1>
-      <article class="design">
+      <article class="design fade-in slider from-bottom">
         <img src="./media/icons/desktop-mobile.svg" alt="Icon">
         <h1>UI / UX Design</h1>
         <p>Get a great layout and aesthetic look on your website and turn more visitors to customers. I use Figma.</p>
         <a href="#contact" class="primary">Contact</a>
       </article>
-      <article class="frontend">
+      <article class="frontend fade-in slider from-bottom">
         <img src="./media/icons/web-code.svg" alt="Icon">
         <h1>Frontend</h1>
         <p>Turn UI/UX design to responsive frontend code. I don’t use frameworks.</p>
@@ -207,7 +208,7 @@
         </ul>
         <a href="#contact" class="primary">Contact</a>
       </article>
-      <article class="backend">
+      <article class="backend fade-in slider from-bottom">
         <img src="./media/icons/web-software.svg" alt="Icon">
         <h1>Backend</h1>
         <p>Algorithms and scripts, created for your website. I use PHP and MySQL.
@@ -218,7 +219,7 @@
         </ul>
         <a href="#contact" class="primary">Contact</a>
       </article>
-      <article class="full-website">
+      <article class="full-website fade-in slider from-bottom">
         <img src="./media/icons/web-pages.svg" alt="Icon">
         <h1>Full Website</h1>
         <p>Built from scratch, special website for your needs. Design and code both included.</p>
@@ -233,15 +234,15 @@
     </section>
     <section id="about" class="side-gap">
       <h1 class="section">About Me</h1>
-      <img src="./media/photos/mete-in-garden-clipped.jpg" alt="Photo of me">
-      <article class="info">
+      <img class="fade-in slider from-left" loading="lazy" src="./media/photos/mete-in-garden-clipped.jpg" alt="Photo of me">
+      <article class="info fade-in slider from-right">
         <h1>Who Am I?</h1>
         <p>I am a new web developer and UI/UX designer from Turkey. I am learning web development on my own and I want to get better at this profession. Because of I am new in that, my prices are lower than usual. But this doesn’t mean that my work is low quality. I just spend more time than people with more experience and do simpler things.
           <span>If you liked my work, and need services I can provide, you can <a href="#contact"><strong>contact
                 me</strong></a>.</span>
         </p>
       </article>
-      <article class="programs">
+      <article class="programs fade-in slider from-bottom">
         <h1>Programs & Languages I Use</h1>
         <ul>
           <li><img src="./media/icons/figma.svg" alt="Figma"></li>
@@ -253,25 +254,25 @@
           <li><img src="./media/icons/sass.svg" alt="SASS"></li>
         </ul>
       </article>
-      <article class="certificates">
+      <article class="certificates fade-in slider from-bottom">
         <h1>My Certificates</h1>
         <div class="container">
           <ul>
-            <li><a href="./documents/HTML5_ile_Web_Geli_tirme_Sertifika.pdf" target="_blank"><img
+            <li><a href="./documents/HTML5_ile_Web_Geli_tirme_Sertifika.pdf" target="_blank"><img loading="lazy"
                   src="./documents/HTML5_ile_Web_Geli_tirme_Sertifika.png" alt="HTML5_ile_Web_Geli_tirme_Sertifika"></a>
             </li>
-            <li><a href="./documents/CSS_Sertifika.pdf" target="_blank"><img src="./documents/CSS_Sertifika.png"
+            <li><a href="./documents/CSS_Sertifika.pdf" target="_blank"><img loading="lazy" src="./documents/CSS_Sertifika.png"
                   alt=""></a></li>
-            <li><a href="./documents/Uygulamalı Girişimcilik Eğitimi Katılım Belgesi.pdf" target="_blank"><img
+            <li><a href="./documents/Uygulamalı Girişimcilik Eğitimi Katılım Belgesi.pdf" target="_blank"><img loading="lazy"
                   src="./documents/Uygulamalı Girişimcilik Eğitimi Katılım Belgesi.png" alt=""></a></li>
           </ul>
         </div>
       </article>
-      <a href="#" class="primary">See My Certificates</a>
+      <a href="#" class="primary fade-in">See My Certificates</a>
     </section>
     <section id="contact" class="side-gap">
       <h1 class="section">Contact Me</h1>
-      <article class="business">
+      <article class="business fade-in  slider from-top">
         <h1>For Business</h1>
         <ul>
           <li>
@@ -294,7 +295,7 @@
           </li>
         </ul>
       </article>
-      <article class="social-media">
+      <article class="social-media fade-in slider from-top">
         <h1>Social Media</h1>
         <ul>
           <li>
@@ -317,7 +318,7 @@
           </li>
         </ul>
       </article>
-      <article class="other">
+      <article class="other fade-in slider from-top">
         <h1>Other</h1>
         <ul>
           <li>
@@ -350,9 +351,7 @@
 </body>
 <script src="./js/general.js"></script>
 <script src="./js/bg-animation.js"></script>
-
-<!--Language packs and scripts-->
-<!-- <script src="./language-packs/TR.JSON"></script> -->
-<script src="./js/language.js"></script>
+<!-- <script src="./js/language.js"></script> -->
+<script src="./js/appear-fade-in.js"></script>
 
 </html>
