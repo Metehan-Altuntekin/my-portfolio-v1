@@ -11,34 +11,39 @@ function ChangeLanguage(language) {
   document.documentElement.lang = language //Change document's lang attribute
   var packAdress
   if (language == "tr-TR") {
-    packAdress = "../language-packs/TR-index-body.html"
+    packAdress = "../language-packs/TR-index.json"
   }
 
   GetLangPack(packAdress)
     .then(function (pack) { ApplyLangPack(pack) })
-    .then(function () {
-      //Need to create animations again
-      CreateBg(document.getElementById("hero"))
-      CreateBg(document.getElementById("portfolio"))
-      CreateBg(document.getElementById("services"), "white", "0.15")
-      CreateBg(document.getElementById("about"))
-      CreateBg(document.getElementById("contact"), "white", "0.03")
-    })
+  /* .then(function () {
+    //Need to create animations again
+    CreateBg(document.getElementById("hero"))
+    CreateBg(document.getElementById("portfolio"))
+    CreateBg(document.getElementById("services"), "white", "0.15")
+    CreateBg(document.getElementById("about"))
+    CreateBg(document.getElementById("contact"), "white", "0.03")
+  }) */
 
 }
 
 async function GetLangPack(address) {
   let data =
     await fetch(address)
-      .then(response => response.text())
+      .then(response => response.json())
       .then(text => {
         return text;
       });
+  console.log(data)
   return (data)
 }
 
 function ApplyLangPack(pack) {
-  previousPack = document.body
-  document.body.innerHTML = ""
-  document.body.innerHTML += pack
+
+  for(let a in pack){
+    console.log("yarrak " + pack[a][1])
+    if(pack[a][0] == "innerHTML"){
+      document.querySelector(a).innerHTML = pack[a][1]
+    }
+  }
 }

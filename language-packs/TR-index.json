@@ -1,0 +1,13 @@
+{
+  
+  "header > nav > a:nth-child(1)":["innerHTML","Portfolyo"],
+  "header > nav > a:nth-child(2)":["innerHTML","Hizmetler"],
+  "header > nav > a:nth-child(3)":["innerHTML","Hakkımda"],
+  "header > nav > a:nth-child(4)":["innerHTML","İletişim"],
+
+  "#hero > h1":["innerHTML","Estetik ve kullanışlı bir web sitesi edinin"],
+  "#hero > p":["innerHTML", "Bir serbest çalışan (freelancer) <span>web yazılımcı</span> ve <span>UI / UX (Arayüz) tasarımcısı</span>yım. Kurumsal tanıtım sitesinden, e-ticaret sitesine kadar birçok çeşitten internet sitelerinin tasarımını ve kodlamasını yapıyorum."],
+  "#hero > a":["innerHTML", "Önceki İşlerime Bakın"],
+
+  "#portfolio > h1":["innerHTML", "Portfolyo"]
+}
