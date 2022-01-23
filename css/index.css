@@ -14,9 +14,31 @@ html body header {
   height: 35px;
   position: fixed;
   width: 100%;
-  z-index: 999;
+  z-index: 9999;
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
+  /*  &.scrolled{
+        background-color: hsl(266, 100%, 95%);
+        border-bottom-color: transparent;
+        .logo{
+          svg{
+            path{
+              //stroke: #fff;
+            }
+          }
+          h1{
+            //color: #fff;
+          }
+          
+        }
+        nav{
+          a{
+            //color: #000;
+            //color: #fff;
+          }
+
+        }
+      } */
 }
 
 html body header .logo {
@@ -26,10 +48,10 @@ html body header .logo {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 5%;
+  gap: 2%;
 }
 
-html body header .logo img {
+html body header .logo img, html body header .logo svg {
   height: 100%;
 }
 
@@ -701,7 +723,7 @@ html body footer button.thanks {
   }
 }
 
-@media screen and (min-width: 1000px) and (orientation: landscape) {
+@media screen and (min-width: 800px) and (orientation: landscape) {
   html body header {
     height: 50px;
   }

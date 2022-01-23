@@ -13,7 +13,7 @@ const appearOptions = {
 }
 
 
-const appear = new IntersectionObserver((elements, appear) =>{
+const Appear = new IntersectionObserver((elements, appear) =>{
   elements.forEach(entry => {
     console.log(entry)
 
@@ -27,7 +27,7 @@ const appear = new IntersectionObserver((elements, appear) =>{
 const faders = document.querySelectorAll(".fade-in")
 
 faders.forEach((fader)=>{
-  appear.observe(fader)
+  Appear.observe(fader)
 
 })
 

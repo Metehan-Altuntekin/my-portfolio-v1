@@ -12,14 +12,14 @@ html {
       height: 35px;
       position: fixed;
       width: 100%;
-      z-index: 999;
+      z-index: 9999;
       backdrop-filter: blur(10px);
 
       .logo {
         display: flex;
         align-items: center;
-        gap: 5%;
-        img {
+        gap: 2%;
+        img, svg {
           height: 100%;
         }
         h1 {
@@ -41,6 +41,29 @@ html {
           font-size: 1rem;
         }
       }
+      
+     /*  &.scrolled{
+        background-color: hsl(266, 100%, 95%);
+        border-bottom-color: transparent;
+        .logo{
+          svg{
+            path{
+              //stroke: #fff;
+            }
+          }
+          h1{
+            //color: #fff;
+          }
+          
+        }
+        nav{
+          a{
+            //color: #000;
+            //color: #fff;
+          }
+
+        }
+      } */
     }
     main {
       section#hero {
@@ -522,8 +545,7 @@ html {
     }
   }
 }
-
-@media screen and (min-width: 1000px) and (orientation: landscape) {
+@media screen and (min-width: 800px) and (orientation: landscape) {
   html {
     body {
       header {
