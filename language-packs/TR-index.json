@@ -9,5 +9,54 @@
   "#hero > p":["innerHTML", "Bir serbest çalışan (freelancer) <span>web yazılımcı</span> ve <span>UI / UX (Arayüz) tasarımcısı</span>yım. Kurumsal tanıtım sitesinden, e-ticaret sitesine kadar birçok çeşitten internet sitelerinin tasarımını ve kodlamasını yapıyorum."],
   "#hero > a":["innerHTML", "Önceki İşlerime Bakın"],
 
-  "#portfolio > h1":["innerHTML", "Portfolyo"]
+  "#portfolio > h1":["innerHTML", "Portfolyo"],
+
+  "#portfolio > article:nth-of-type(1) p":["innerHTML", "Aslında sadece JavaScript'te pratik yapmak için geliştirdiğim bir uygulama. Yazılım dünyasına yeni bir katkısı yok. Birinci amacı başka sitelere entegre ederek kullanmak." ],
+  "#portfolio > article:nth-of-type(1) .extract a:nth-of-type(1) span":["innerHTML", "Kaynak Kodları" ],
+  "#portfolio > article:nth-of-type(1) .extract a:nth-of-type(2) span":["innerHTML", "Yeni Sekmede Aç" ],
+
+  "#portfolio > article:nth-of-type(2) p":["innerHTML", "Özelleştirilebilir bir animasyon sistemi. Yıldız gibi görünen kare şekiller beliriyor ve hareket ediyorlar. Bir süre sonra ölüyorlar." ],
+  "#portfolio > article:nth-of-type(2) .extract a:nth-of-type(1) span":["innerHTML", "Kaynak Kodları" ],
+  "#portfolio > article:nth-of-type(2) .extract a:nth-of-type(2) span":["innerHTML", "Yeni Sekmede Aç" ],
+
+  "#services > h1":["innerHTML","Hizmetler"],
+  
+  "#services > .design > h1":["innerHTML","UI / UX Tasarım"],
+  "#services > .design > p":["innerHTML","Sitenizde harika bir yerleşim düzeni estetik görüntü edinerek daha fazla ziyaretçiyi müşteriye çevirin. Figma programını kullanıyorum."],
+  "#services > .design > a":["innerHTML","İletişime Geçin"],
+  
+  "#services > .frontend > h1":["innerHTML","Frontend"],
+  "#services > .frontend > p":["innerHTML","Var olan tasarımınızı cihaz uyumluluğu olan frontend koduna çevirtin. Kütüphane kullanmıyorum."],
+  "#services > .frontend > ul":["innerHTML","<li>.psd / .fig'den HTML ve CSS'e dönüştürme</li> <li>Javascript uygulamaları</li>"],
+  "#services > .frontend > a":["innerHTML","İletişime Geçin"],
+  
+  "#services > .backend > h1":["innerHTML","Backend"],
+  "#services > .backend > p":["innerHTML","Web sitenizin ihtiyacına özel üretilmiş algoritmalardan oluşan sunucu tarafı yazılımları."],
+  "#services > .backend > ul":["innerHTML","<li>CMS sistemleri</li> <li>Muhasebe sistemleri</li> <li>Web uygulamalarının sunucu tarafı yazılımları</li>"],
+  "#services > .backend > a":["innerHTML","İletişime Geçin"],
+  
+  "#services > .full-website > h1":["innerHTML","Tam Site"],
+  "#services > .full-website > p":["innerHTML","İsteğinize göre, sıfırdan tasarlanmış ve kodlanmış tam internet sitesi. Hem tasarım hem yazılım tamamen dahildir."],
+  "#services > .full-website > ul":["innerHTML","<li>Kurumsal tanıtım siteleri</li> <li>Bloglar</li> <li>E-ticaret siteleri</li> <li>Diğer bir çok çeşitte siteler</li>"],
+  "#services > .full-website > a":["innerHTML","İletişime Geçin"],
+
+  "#about > h1":["innerHTML","Hakkımda"],
+
+  "#about > .info > h1":["innerHTML","Ben Kimim?"],
+  "#about > .info > p":["innerHTML","Yeni bir serbest çalışan (freelancer) web tasarımcı ve yazılımcıyım. Bu işi kendi kendime öğreniyorum ve bu işte daha da gelişmek istiyorum. Yeni başlamış olmam sakın sizi yanıltmasın, işime bütün titizliğimi veririm ve işimin kaliteli olmasını öncelik edinirim. Sadece, benden tecrübeli insanlara göre daha yavaşım ve biraz daha basit işleri yapıyorum. <span><strong>Vergi mükellefiyim</strong> ve siparişlerinize makbuz kesiyorum.</span><span>Eğer sağlayabileceğim hizmetlere ihtiyacınız varsa benimle <a href='#contact'><strong>iletişime geçebilirsiniz</strong></a>.</span>"],
+  
+  "#about > .programs > h1":["innerHTML","Kullandığım Diller ve Araçlar"],
+  
+  "#about > .certificates > h1":["innerHTML","Sertifikalarım"],
+
+  "#about > a":["innerHTML","Sertifikalarım"],
+
+  "#contact > h1":["innerHTML","İletişime Geçin"],
+  "#contact > .business > h1":["innerHTML","Sipariş Verin"],
+  "#contact > .social-media > h1":["innerHTML","Sosyal Medya"],
+  "#contact > .other > h1":["innerHTML","Diğer"],
+
+
+
+  "":["",""]
 }
