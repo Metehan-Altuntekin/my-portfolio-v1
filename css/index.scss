@@ -97,8 +97,9 @@ html {
         }
         p {
           grid-area: text;
-          font-family: "Josefin Slab", serif;
+          //font-family: "Josefin Slab", serif;
           font-size: 1rem;
+          font-weight: 300;
           line-height: 1.5em;
           align-self: center;
           max-width: 400px;

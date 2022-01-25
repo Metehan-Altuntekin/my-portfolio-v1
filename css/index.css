@@ -128,8 +128,8 @@ html body main section#hero p {
   -ms-grid-column: 1;
   -ms-grid-column-span: 5;
   grid-area: text;
-  font-family: "Josefin Slab", serif;
   font-size: 1rem;
+  font-weight: 300;
   line-height: 1.5em;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
