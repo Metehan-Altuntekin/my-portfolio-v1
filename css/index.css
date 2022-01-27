@@ -891,8 +891,8 @@ html body footer button.thanks {
     -ms-flex-item-align: end;
         -ms-grid-row-align: end;
         align-self: end;
-    -webkit-transform: translateX(50px);
-            transform: translateX(50px);
+    position: relative;
+    left: 50px;
   }
   html body main section#portfolio article:nth-child(even) {
     margin-right: 150px;

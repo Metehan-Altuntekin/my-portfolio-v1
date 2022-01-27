@@ -708,7 +708,8 @@ html {
           }
           svg {
             align-self: end;
-            transform: translateX(50px);
+            position: relative;
+            left: 50px;
           }
         }
         section#portfolio {
