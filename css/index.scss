@@ -80,8 +80,8 @@ html {
         grid-template-areas:
           "head head head head head ...."
           ".... img  img  img  img  img "
-          "text text text text text ...."
-          ".... link link link link ....";
+          "text text text text text text"
+          "link link link link link link";
 
         h1 {
           grid-area: head;
@@ -120,6 +120,7 @@ html {
           margin: auto;
           min-width: 0;
           min-height: 0;
+          width: max-content;
         }
       }
       section#portfolio {

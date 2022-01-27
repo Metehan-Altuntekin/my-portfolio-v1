@@ -98,7 +98,7 @@ html body main section#hero {
   vertical-align: middle;
   -ms-grid-columns: (1fr)[6];
       grid-template-columns: repeat(6, 1fr);
-      grid-template-areas: "head head head head head ...." ".... img  img  img  img  img " "text text text text text ...." ".... link link link link ....";
+      grid-template-areas: "head head head head head ...." ".... img  img  img  img  img " "text text text text text text" "link link link link link link";
 }
 
 html body main section#hero h1 {
@@ -126,7 +126,7 @@ html body main section#hero > svg {
 html body main section#hero p {
   -ms-grid-row: 3;
   -ms-grid-column: 1;
-  -ms-grid-column-span: 5;
+  -ms-grid-column-span: 6;
   grid-area: text;
   font-size: 1rem;
   font-weight: 300;
@@ -150,8 +150,8 @@ html body main section#hero p span:last-child {
 
 html body main section#hero a {
   -ms-grid-row: 4;
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 4;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 6;
   grid-area: link;
   -ms-grid-column-align: center;
       justify-self: center;
@@ -161,6 +161,9 @@ html body main section#hero a {
   margin: auto;
   min-width: 0;
   min-height: 0;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
 }
 
 html body main section#portfolio {
