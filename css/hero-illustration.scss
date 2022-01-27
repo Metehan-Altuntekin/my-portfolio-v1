@@ -1,0 +1,38 @@
+#Frame-Carried,
+#Crane-String,
+#Crane-Carry-Platform {
+  animation: Frame 10s infinite;
+}
+
+@keyframes Frame {
+  0% {
+    transform: translateX(10%);
+  }
+  50% {
+    transform: translateX(-10%);
+  }
+  100% {
+    transform: translateX(10%);
+  }
+}
+
+#Frame-Carried,
+#Crane-String {
+  animation: Swing 10s infinite;
+  transform-origin: top;
+}
+
+@keyframes Swing {
+  0% {
+    transform: translateX(9%) rotate(-5deg);
+
+  }
+  50% {
+    transform: translateX(-9%) rotate(5deg);
+  
+  }
+  100% {
+    transform: translateX(9%) rotate(-5deg);
+  
+  }
+}

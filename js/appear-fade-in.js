@@ -30,7 +30,6 @@ faders.forEach((fader)=>{
   Appear.observe(fader)
   if(fader.hasAttribute("data-anim-delay") == true){      //Add delay to fade-in animations based on levels
     let delayLevel = fader.getAttribute("data-anim-delay")
-    console.log(delayLevel)
     fader.style.transitionDelay = `${delayLevel * 75}ms` 
   }
 })

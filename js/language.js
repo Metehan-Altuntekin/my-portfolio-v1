@@ -41,7 +41,6 @@ async function GetLangPack(address) {
 function ApplyLangPack(pack) {
 
   for(let a in pack){
-    console.log("yarrak " + pack[a][1])
     if(pack[a][0] == "innerHTML"){
       document.querySelector(a).innerHTML = pack[a][1]
     }
