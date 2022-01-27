@@ -29,8 +29,8 @@
             transform: translateX(0px);
   }
   100% {
-    -webkit-transform: translateX(5vw);
-            transform: translateX(5vw);
+    -webkit-transform: translateX(15vw);
+            transform: translateX(15vw);
   }
   /* 50%{
     transform: translateX(5vw);
@@ -47,8 +47,8 @@
             transform: translateX(0px);
   }
   100% {
-    -webkit-transform: translateX(5vw);
-            transform: translateX(5vw);
+    -webkit-transform: translateX(15vw);
+            transform: translateX(15vw);
   }
   /* 50%{
     transform: translateX(5vw);
@@ -65,8 +65,8 @@
             transform: translateX(0px);
   }
   100% {
-    -webkit-transform: translateX(-5vw);
-            transform: translateX(-5vw);
+    -webkit-transform: translateX(-15vw);
+            transform: translateX(-15vw);
   }
   /* 50%{
     transform: translateX(-5vw);
@@ -83,8 +83,8 @@
             transform: translateX(0px);
   }
   100% {
-    -webkit-transform: translateX(-5vw);
-            transform: translateX(-5vw);
+    -webkit-transform: translateX(-15vw);
+            transform: translateX(-15vw);
   }
   /* 50%{
     transform: translateX(-5vw);
