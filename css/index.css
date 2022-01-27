@@ -114,7 +114,7 @@ html body main section#hero h1 {
       align-self: end;
 }
 
-html body main section#hero svg {
+html body main section#hero > svg {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
@@ -887,7 +887,7 @@ html body footer button.thanks {
   html body main section#hero h1 {
     font-size: 4rem;
   }
-  html body main section#hero svg {
+  html body main section#hero > svg {
     -ms-flex-item-align: end;
         -ms-grid-row-align: end;
         align-self: end;

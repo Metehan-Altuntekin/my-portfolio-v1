@@ -1,6 +1,6 @@
 .bg-area {
   position: absolute;
-  z-index: -2;
+  z-index: -99;
   left: 0;
   top: 0;
   height: 100%;
@@ -10,40 +10,88 @@
 
 .bg-particle {
   position: absolute;
-  width: clamp(50px, 5vw, 200px);
-  -webkit-animation: move infinite 15s linear;
-          animation: move infinite 15s linear;
+  width: clamp(40px, 4vw, 160px);
 }
 
-@-webkit-keyframes move {
-  0% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-    opacity: 1;
-  }
-  75% {
-    opacity: 1;
-  }
-  100% {
-    -webkit-transform: translateX(1920px);
-            transform: translateX(1920px);
-    opacity: 0;
-  }
+.bg-particle.move-right {
+  -webkit-animation: BgParticleMoveRight infinite 4s linear;
+          animation: BgParticleMoveRight infinite 4s linear;
 }
 
-@keyframes move {
+.bg-particle.move-left {
+  -webkit-animation: BgParticleMoveLeft infinite 4s linear;
+          animation: BgParticleMoveLeft infinite 4s linear;
+}
+
+@-webkit-keyframes BgParticleMoveRight {
   0% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-    opacity: 1;
-  }
-  75% {
-    opacity: 1;
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
   }
   100% {
-    -webkit-transform: translateX(1920px);
-            transform: translateX(1920px);
-    opacity: 0;
+    -webkit-transform: translateX(5vw);
+            transform: translateX(5vw);
   }
+  /* 50%{
+    transform: translateX(5vw);
+  }
+  100%{
+    transform: translateX(0px);
+    //opacity: 0;
+  } */
+}
+
+@keyframes BgParticleMoveRight {
+  0% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+  100% {
+    -webkit-transform: translateX(5vw);
+            transform: translateX(5vw);
+  }
+  /* 50%{
+    transform: translateX(5vw);
+  }
+  100%{
+    transform: translateX(0px);
+    //opacity: 0;
+  } */
+}
+
+@-webkit-keyframes BgParticleMoveLeft {
+  0% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+  100% {
+    -webkit-transform: translateX(-5vw);
+            transform: translateX(-5vw);
+  }
+  /* 50%{
+    transform: translateX(-5vw);
+  }
+  100%{
+    transform: translateX(0px);
+    //opacity: 0;
+  } */
+}
+
+@keyframes BgParticleMoveLeft {
+  0% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+  100% {
+    -webkit-transform: translateX(-5vw);
+            transform: translateX(-5vw);
+  }
+  /* 50%{
+    transform: translateX(-5vw);
+  }
+  100%{
+    transform: translateX(0px);
+    //opacity: 0;
+  } */
 }
 /*# sourceMappingURL=bg.css.map */

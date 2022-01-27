@@ -1,6 +1,6 @@
 .bg-area{
   position: absolute;
-  z-index: -2;
+  z-index: -99;
   left: 0;
   top: 0;
   height: 100%;
@@ -9,22 +9,46 @@
 }
 .bg-particle{
   position: absolute;
-  width: clamp(50px, 5vw, 200px);
+  width: clamp(40px, 4vw, 160px);
+  //border: 1px solid red;
   
-  animation: move infinite 15s linear;
+  &.move-right{
+    animation: BgParticleMoveRight infinite 4s linear;
+    
+  }
+  &.move-left{
+    animation: BgParticleMoveLeft infinite 4s linear;
+
+  }
 }
 
-@keyframes move {
+@keyframes BgParticleMoveRight {
   0%{
-    transform: translateX(0);
-    opacity: 1;
+    transform: translateX(0px);
+    //opacity: 0;
   }
-  75%{
-    opacity: 1;
+  100%{ transform: translateX(5vw);}
+  /* 50%{
+    transform: translateX(5vw);
   }
   100%{
-    transform: translateX(1920px);
-    opacity: 0;
+    transform: translateX(0px);
+    //opacity: 0;
+  } */
+
+}
+@keyframes BgParticleMoveLeft {
+  0%{
+    transform: translateX(0px);
+    //opacity: 0;
   }
+  100%{ transform: translateX(-5vw);}
+  /* 50%{
+    transform: translateX(-5vw);
+  }
+  100%{
+    transform: translateX(0px);
+    //opacity: 0;
+  } */
 
 }

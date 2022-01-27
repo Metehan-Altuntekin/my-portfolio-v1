@@ -8,25 +8,44 @@ function CreateBgArea(zone) {
   zone.appendChild(bgArea)
 }
 
-
+var isBgParticleLeft = false;
 function CreateBgParticle(zone, color, opacity) {
 
   let bgParticle = document.createElementNS("http://www.w3.org/2000/svg", "svg")
   bgParticle.classList.add("bg-particle")
-  bgParticle.setAttribute("width", "145")
-  bgParticle.setAttribute("height", "61")
+  if(isBgParticleLeft == false){
+    bgParticle.classList.add("move-left")
+    isBgParticleLeft = true
+  } else{
+    bgParticle.classList.add("move-right")
+    isBgParticleLeft = false 
+  }
+  
+  // bgParticle.setAttribute("width", "145")
+  //bgParticle.setAttribute("height", "61")
   bgParticle.setAttribute("viewBox", "0 0 145 61")
   bgParticle.setAttribute("fill", "none")
   bgParticle.setAttribute("xmlns", "http://www.w3.org/2000/svg")
-  bgParticle.addEventListener("click", function(){
+
+  bgParticle.addEventListener("click", function () {      //Explode on click
     //bgParticle.style.transition = "width 0.1s ease-out"
-    bgParticle.style.width = "30vw"
-    this.style.transform = "translateX(-50%)"
+
+    this.style.transition = "0.15s"
+    this.style.animation = "unset";
+    let Widen = async () => {
+      bgParticle.style.width = "30vw"
+      this.style.height = "auto";
+      this.style.opacity = "0.4"
+    }
+    Widen().then(() => {
+      this.style.transform = "translate(-40%, -40%)"
+    })
+
     setTimeout(() => {
       bgParticle.remove()
-    }, 100);
+    }, 150);
   })
-  if(opacity == undefined){opacity = "0.06"} //Default value of opacity if not set in call
+  if (opacity == undefined) { opacity = "0.06" } //Default value of opacity if not set in call
   if (color == undefined || color == "purple") {
     bgParticle.classList.add("purple")
     bgParticle.innerHTML = `
@@ -43,25 +62,37 @@ function CreateBgParticle(zone, color, opacity) {
       `
   }
 
-  bgParticle.style.left = "-10vw";
+  bgParticle.style.left = RandomPos();
   bgParticle.style.top = RandomPos();
 
+  //Appear smoothly
+  bgParticle.style.transition = "opacity 1000ms"
+  bgParticle.style.opacity = "0"
   zone.appendChild(bgParticle)
-
   setTimeout(() => {
-    bgParticle.remove();
-  }, 15000)
+    bgParticle.style.opacity = "1"
+  }, 10);
+
+  //Disappear smoothly
+  setTimeout(() => {
+    bgParticle.style.transition = "opacity 1000ms"
+    bgParticle.style.opacity = "0"
+
+    setTimeout(() => {
+      bgParticle.remove();
+    }, 1000);
+  }, 3000)
 }
 
 function CreateBg(zone, color, opacity) {
   CreateBgArea(zone)
   setInterval(() => {
     CreateBgParticle(zone.getElementsByClassName("bg-area")[0], color, opacity)
-  }, 800);
+  }, 200);
 }
 
 CreateBg(document.getElementById("hero"))
 CreateBg(document.getElementById("portfolio"))
-CreateBg(document.getElementById("services"),"white", "0.15")
+CreateBg(document.getElementById("services"), "white", "0.15")
 CreateBg(document.getElementById("about"))
-CreateBg(document.getElementById("contact"),"white", "0.03")
+CreateBg(document.getElementById("contact"), "white", "0.03")

@@ -65,6 +65,7 @@ strong{
 
 a,button,input{
   z-index: 999;
+  position: relative;
 }
 a.primary{
   background-color: $salmon-vivid;
