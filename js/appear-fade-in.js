@@ -13,13 +13,13 @@ const appearOptions = {
 }
 
 
-const Appear = new IntersectionObserver((elements, appear) =>{
+const Appear = new IntersectionObserver((elements, Appear) =>{
   elements.forEach(entry => {
-    console.log(entry)
+    //console.log(entry)
 
     if(entry.isIntersecting){
       entry.target.classList.add("appear")
-      appear.unobserve(entry.target)
+      Appear.unobserve(entry.target)
     }
   });
 }, appearOptions)

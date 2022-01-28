@@ -9,11 +9,11 @@ html {
     header {
       border-bottom: 1px solid $header-border;
       display: flex;
-      height: 35px;
+      height: clamp(35px, 7vmin, 100px);
       position: fixed;
       width: 100%;
       z-index: 9999;
-      backdrop-filter: blur(10px);
+      background-color: $bg;
 
       .logo {
         display: flex;
@@ -26,19 +26,48 @@ html {
           font-family: "Josefin Slab", serif;
           color: $purple;
           width: max-content;
-          font-size: 16px;
+          font-size: clamp(1rem, 3vmin, 2.4rem);
           white-space: nowrap;
         }
       }
       nav {
-        display: none;
+        display: none; //flex over 800px viewport width
         align-items: center;
         margin-left: auto;
         gap: 3vw;
         a {
-          color: $salmon-vivid;
-          font-variant: small-caps;
-          font-size: 1rem;
+          color: #111;
+          //font-variant:small-caps;
+          //text-transform: lowercase;
+          font-size: clamp(1rem, 1.5vmin, 2rem);
+          font-weight: 600;
+          vertical-align: middle;
+          display: flex;
+
+          &::before{
+            content: "";
+            display: block;
+            position: absolute;
+            left: -10px;
+            bottom: 2px;
+            align-self: center;
+            justify-self: center;
+            height: 100%;
+            width: 2px;
+            background-color: $salmon;
+            //opacity: 0.4;
+            z-index: -1;
+            transform: translateY(10%);
+            transition: 0.6s;
+            border-radius: 10px;
+          }
+          &.active{
+            color: $salmon-vivid;
+            &::before{
+              //width: calc(100% + 10px + 10px);
+              opacity: 1;
+            }
+          }
         }
       }
       
@@ -98,11 +127,11 @@ html {
         p {
           grid-area: text;
           //font-family: "Josefin Slab", serif;
-          font-size: 1rem;
+          font-size: clamp(1rem, 1vmax, 1.6rem);
           font-weight: 300;
           line-height: 1.5em;
           align-self: center;
-          max-width: 400px;
+          max-width: 700px;
           span {
             font-size: inherit;
             font-family: inherit;
@@ -469,7 +498,7 @@ html {
     footer {
       background-color: $contact-article-bg;
       width: 100%;
-      height: clamp(200px, max-content, 500px);
+      height: clamp(200px, 20vh, 500px);
       display: flex;
       flex-direction: column;
 
@@ -551,11 +580,9 @@ html {
   html {
     body {
       header {
-        height: 50px;
+        
         .logo {
-          h1 {
-            font-size: 20px;
-          }
+         
         }
         nav {
           display: flex;

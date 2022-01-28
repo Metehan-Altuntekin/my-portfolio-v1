@@ -34,7 +34,7 @@ async function GetLangPack(address) {
       .then(text => {
         return text;
       });
-  console.log(data)
+  //console.log(data)
   return (data)
 }
 
