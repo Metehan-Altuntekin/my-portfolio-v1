@@ -19,7 +19,8 @@ html {
         display: flex;
         align-items: center;
         gap: 2%;
-        img, svg {
+        img,
+        svg {
           height: 100%;
         }
         h1 {
@@ -40,38 +41,41 @@ html {
           //font-variant:small-caps;
           //text-transform: lowercase;
           font-size: clamp(1rem, 1.5vmin, 2rem);
+          line-height: clamp(1rem, 1.5vmin, 2rem);
           font-weight: 600;
-          vertical-align: middle;
           display: flex;
+          vertical-align: middle;
+          align-items: center;
+          flex-direction: row;
+          //outline: 1px cyan solid;
 
-          &::before{
+          &::before {
             content: "";
             display: block;
             position: absolute;
-            left: -10px;
-            bottom: 2px;
-            align-self: center;
-            justify-self: center;
-            height: 100%;
+            background-color: $purple;
             width: 2px;
-            background-color: $salmon;
-            //opacity: 0.4;
+            height: 1em;
+            border-radius: .5em;
             z-index: -1;
-            transform: translateY(10%);
-            transition: 0.6s;
-            border-radius: 10px;
+            transform: translateX(-0.25em);
+            transition: 0.5s;
           }
-          &.active{
-            color: $salmon-vivid;
-            &::before{
-              //width: calc(100% + 10px + 10px);
+          &.active {
+            //color: $salmon-vivid;
+            color: white;
+            font-weight: 700;
+            &::before {
+              width: calc(100% + 2em);
+              height: calc(100% + 1em);
+              transform: translateX(-1em);
               opacity: 1;
             }
           }
         }
       }
-      
-     /*  &.scrolled{
+
+      /*  &.scrolled{
         background-color: hsl(266, 100%, 95%);
         border-bottom-color: transparent;
         .logo{
@@ -150,6 +154,7 @@ html {
           min-width: 0;
           min-height: 0;
           width: max-content;
+          font-size: clamp(1rem, 2vh,5rem);
         }
       }
       section#portfolio {
@@ -308,9 +313,7 @@ html {
 
         border-radius: 0 0 50px 50px;
         background-color: $bg;
-        z-index: 5;
-        position: relative;
-        top: 50px;
+       
         padding-bottom: 70px;
         & > h1 {
           grid-area: head;
@@ -422,9 +425,8 @@ html {
         justify-content: center;
         align-items: center;
         gap: 40px;
-        position: relative;
-        z-index: 4;
-        padding-top: 50px;
+        border-radius: 50px 50px 0 0;
+        //padding-top: 50px;
         padding-bottom: 50px;
 
         & > h1 {
@@ -580,9 +582,7 @@ html {
   html {
     body {
       header {
-        
         .logo {
-         
         }
         nav {
           display: flex;

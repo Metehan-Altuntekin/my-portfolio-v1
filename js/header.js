@@ -24,11 +24,12 @@ const SectionAppearOptions = {
 }
 const SectionAppear = new IntersectionObserver((elements) => {
   elements.forEach(entry => {
-    //console.log(entry.target.id)
     if (entry.isIntersecting) {
+      console.log(entry.target.id)
       if(entry.target.id == "hero") return;
       document.querySelector(`header nav a[href="#${entry.target.id}"]`).classList.add("active")
     } else{
+      if(entry.target.id == "hero") return;
       document.querySelector(`header nav a[href="#${entry.target.id}"]`).classList.remove("active")
     }
   })
