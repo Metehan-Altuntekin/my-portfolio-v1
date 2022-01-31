@@ -7,7 +7,6 @@ html body {
 }
 
 html body header {
-  border-bottom: 1px solid rgba(148, 96, 230, 0.3);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -15,7 +14,10 @@ html body header {
   position: fixed;
   width: 100%;
   z-index: 9999;
-  background-color: #FAF7FF;
+  background: -webkit-gradient(linear, left top, right top, color-stop(30%, #FAF7FF), color-stop(40%, transparent), color-stop(60%, transparent), color-stop(70%, #FAF7FF));
+  background: linear-gradient(to right, #FAF7FF 30%, transparent 40%, transparent 60%, #FAF7FF 70%);
+  -webkit-backdrop-filter: blur(6px);
+          backdrop-filter: blur(6px);
   /*  &.scrolled{
         background-color: hsl(266, 100%, 95%);
         border-bottom-color: transparent;

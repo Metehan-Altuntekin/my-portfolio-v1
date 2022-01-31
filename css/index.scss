@@ -7,13 +7,14 @@ html {
     background-color: $bg;
 
     header {
-      border-bottom: 1px solid $header-border;
+      //border-bottom: 1px solid $header-border;
       display: flex;
       height: clamp(35px, 7vmin, 100px);
       position: fixed;
       width: 100%;
       z-index: 9999;
-      background-color: $bg;
+      background: linear-gradient(to right, $bg 30%, transparent 40%, transparent 60%, $bg 70%);
+      backdrop-filter: blur(6px);
 
       .logo {
         display: flex;
