@@ -45,9 +45,14 @@ strong{
 
 //side-gap class is for indenting elements in an order without giving the body a padding
 .side-gap{
-  padding: 0px 10px;
+  padding-right: clamp(10px, 5vw, 200px);
+  padding-left: clamp(10px, 5vw, 200px);
 }
-@media screen and (min-width: 400px){
+.vertical-gap{
+  padding-top: clamp(10px, 5vw, 200px) ;
+  padding-bottom: clamp(10px, 5vw, 200px) ;
+}
+/* @media screen and (min-width: 400px){
   .side-gap{
     padding: 0px 20px;
   }
@@ -61,7 +66,7 @@ strong{
   .side-gap{
     padding: 0px 150px;
   }
-}
+} */
 
 a,button,input{
   z-index: 999;

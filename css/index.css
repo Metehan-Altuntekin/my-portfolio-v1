@@ -101,7 +101,7 @@ html body header nav a::before {
   background-color: #925EE6;
   width: 2px;
   height: 1em;
-  border-radius: .5em;
+  border-radius: 0.5em;
   z-index: -1;
   -webkit-transform: translateX(-0.25em);
           transform: translateX(-0.25em);
@@ -217,118 +217,108 @@ html body main section#portfolio {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 0;
   background-color: transparent;
+  gap: clamp(10px, 5vw, 200px);
 }
 
 html body main section#portfolio article {
-  height: 500px;
-  background-color: #FF9266;
-  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  padding-bottom: 30px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-html body main section#portfolio article > h1 {
+html body main section#portfolio article > .view {
+  background-color: #FEA47F;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+html body main section#portfolio article > .view h1 {
   width: 100%;
+  margin: 1em 0em 1.5em 0em;
 }
 
-html body main section#portfolio article > h1 a {
-  font-family: inherit;
-  font-size: inherit;
-  font-weight: inherit;
+html body main section#portfolio article > .view iframe {
+  border: clamp(3px, 0.8vmin, 15px) solid #FAF7FF;
+  border-radius: clamp(10px, 3vmin, 50px);
+  -webkit-box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.4);
+          box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.4);
 }
 
-html body main section#portfolio article iframe,
-html body main section#portfolio article .extract {
-  border-radius: 30px;
-  border: 7px solid #FEA47F;
-}
-
-html body main section#portfolio article iframe {
-  width: 80%;
-  max-width: 500px;
-  height: 80%;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-  -ms-grid-column-align: center;
-      justify-self: center;
-  margin: 0 auto;
-}
-
-html body main section#portfolio article .extract {
+html body main section#portfolio article > .view iframe.desktop {
   display: none;
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  background-color: #FFEDE7;
-  border-radius: 0;
-  padding: 20px;
 }
 
-html body main section#portfolio article .extract h1 {
+html body main section#portfolio article > .view iframe.mobile {
   width: 100%;
-  margin-bottom: 1em;
-  font-family: "Josefin Slab";
+  aspect-ratio: 9/18;
+}
+
+html body main section#portfolio article > .extract {
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+html body main section#portfolio article > .extract h1 {
+  font-size: clamp(2rem, 2vw, 5rem);
+  line-height: 1;
+  margin-bottom: clamp(1rem, 10%, 7rem);
+}
+
+html body main section#portfolio article > .extract p {
+  margin-bottom: clamp(1rem, 20%, 7rem);
   font-size: 1.5rem;
 }
 
-html body main section#portfolio article .extract p {
-  width: 75%;
-  -ms-flex-item-align: start;
-      align-self: flex-start;
-  line-height: 1.5em;
-}
-
-html body main section#portfolio article .extract a {
+html body main section#portfolio article > .extract .buttons {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
-  -ms-flex-item-align: end;
-      align-self: flex-end;
-  margin-right: 2em;
-  gap: 0.6em;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 2rem;
 }
 
-html body main section#portfolio article .extract a img {
-  height: 1.4rem;
+html body main section#portfolio article > .extract .buttons a {
+  display: inline-block;
 }
 
-html body main section#portfolio article .extract a span {
-  font-size: 0.85rem;
+html body main section#portfolio article > .extract .buttons a img {
+  height: 1.5rem;
 }
 
-html body main section#portfolio article:nth-child(even) {
-  border-radius: 0 100px 50px 0;
-  margin-right: 10px;
-  margin-bottom: 10px;
+html body main section#portfolio article:nth-of-type(odd) .view {
+  border-radius: 0px clamp(50px, 9vmax, 250px) clamp(15px, 3vmax, 100px) 0px;
+  margin-right: clamp(10px, 5vw, 200px);
 }
 
-html body main section#portfolio article:nth-child(odd) {
-  border-radius: 100px 0px 0px 50px;
-  margin-left: 10px;
-  margin-bottom: 10px;
+html body main section#portfolio article:nth-of-type(odd) .extract {
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
+}
+
+html body main section#portfolio article:nth-of-type(odd) .extract * {
+  text-align: end;
+}
+
+html body main section#portfolio article:nth-of-type(even) .view {
+  border-radius: clamp(50px, 9vmax, 250px) 0px 0px clamp(15px, 3vmax, 100px);
+  margin-left: clamp(10px, 5vw, 200px);
 }
 
 html body main section#portfolio a {
@@ -731,14 +721,6 @@ html body footer button.thanks {
   html body main section#hero h1 {
     font-size: 3rem;
   }
-  html body main section#portfolio article:nth-child(even) {
-    margin-right: 20px;
-    margin-bottom: 20px;
-  }
-  html body main section#portfolio article:nth-child(odd) {
-    margin-left: 20px;
-    margin-bottom: 20px;
-  }
   html body main section#services article {
     width: 300px;
   }
@@ -762,7 +744,7 @@ html body footer button.thanks {
   }
 }
 
-@media screen and (min-width: 800px) and (orientation: landscape) {
+@media screen and (min-width: 800px) {
   html body header nav {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -789,73 +771,89 @@ html body footer button.thanks {
     margin: unset;
   }
   html body main section#portfolio article {
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    padding-bottom: unset;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
   }
-  html body main section#portfolio article > h1 {
-    width: 100%;
-    text-align: center;
+  html body main section#portfolio article .view {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[6];
+        grid-template-columns: repeat(6, 1fr);
+    -ms-grid-rows: (1fr)[6];
+        grid-template-rows: repeat(6, 1fr);
+  }
+  html body main section#portfolio article .view h1 {
     display: none;
   }
-  html body main section#portfolio article .info {
-    display: none;
+  html body main section#portfolio article .view iframe.desktop {
+    grid-area: desk;
+    display: block;
+    aspect-ratio: 16/9;
+    width: calc((50vw - clamp(10px, 5vw, 200px)));
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 5;
+    grid-column: 1/6;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 6;
+    grid-row: 1/7;
   }
-  html body main section#portfolio article iframe {
-    max-width: 45%;
-    height: 80%;
+  html body main section#portfolio article .view iframe.mobile {
+    grid-area: mobi;
+    width: 11vw;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+    -ms-grid-column: 5;
+    -ms-grid-column-span: 2;
+    grid-column: 5/7;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 5;
+    grid-row: 2/7;
+    -ms-flex-item-align: bottom;
+        -ms-grid-row-align: bottom;
+        align-self: bottom;
+    -ms-grid-column-align: center;
+        justify-self: center;
   }
   html body main section#portfolio article .extract {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    position: static;
-    top: unset;
-    left: unset;
-    max-width: 45%;
-    height: 80%;
-    border-radius: 100px;
   }
-  html body main section#portfolio article:nth-child(even) {
-    margin-right: 40px;
-    margin-bottom: 40px;
-    border-top-right-radius: 1000px;
-    border-bottom-right-radius: 300px;
+  html body main section#portfolio article:nth-of-type(odd) > div {
+    padding-bottom: clamp(10px, 2.5vw, 200px);
+    padding-top: clamp(10px, 2.5vw, 200px);
   }
-  html body main section#portfolio article:nth-child(even) iframe {
-    justify-self: flex-start;
+  html body main section#portfolio article:nth-of-type(odd) .view {
+    padding-right: 0;
   }
-  html body main section#portfolio article:nth-child(even) .extract {
-    border-top-right-radius: 1000px;
-    border-bottom-right-radius: 300px;
+  html body main section#portfolio article:nth-of-type(even) {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
   }
-  html body main section#portfolio article:nth-child(odd) {
-    margin-left: 40px;
-    margin-bottom: 40px;
-    border-top-left-radius: 1000px;
-    border-bottom-left-radius: 300px;
+  html body main section#portfolio article:nth-of-type(even) > div {
+    padding-bottom: clamp(10px, 2.5vw, 200px);
+    padding-top: clamp(10px, 2.5vw, 200px);
   }
-  html body main section#portfolio article:nth-child(odd) iframe {
-    -webkit-box-ordinal-group: 5;
-        -ms-flex-order: 4;
-            order: 4;
+  html body main section#portfolio article:nth-of-type(even) .view {
+    padding-left: 0;
   }
-  html body main section#portfolio article:nth-child(odd) .extract {
-    border-top-left-radius: 1000px;
-    border-bottom-left-radius: 300px;
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
+  html body main section#portfolio article:nth-of-type(even) .view .desktop {
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 5;
+    grid-column: 2/7;
   }
-  html body main section#portfolio article:nth-child(odd) .extract h1 {
-    text-align: end;
-  }
-  html body main section#portfolio article:nth-child(odd) .extract p {
-    text-align: end;
+  html body main section#portfolio article:nth-of-type(even) .view .mobile {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1/3;
   }
   html body main section#services {
     -webkit-box-orient: horizontal;
@@ -926,14 +924,6 @@ html body footer button.thanks {
         align-self: end;
     position: relative;
     left: 50px;
-  }
-  html body main section#portfolio article:nth-child(even) {
-    margin-right: 150px;
-    margin-bottom: 150px;
-  }
-  html body main section#portfolio article:nth-child(odd) {
-    margin-left: 150px;
-    margin-bottom: 150px;
   }
   html body main section#about {
     gap: 50px;
