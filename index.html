@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="./css/general.css">
   <link rel="stylesheet" href="./css/index.css">
   <link rel="stylesheet" href="./css/bg.css">
-  <!-- <link rel="stylesheet" href="./css/fade-in.css"> -->
+  <link rel="stylesheet" href="./css/fade-in.css">
   <link rel="stylesheet" href="./css/hero-illustration.css">
 
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -253,16 +253,16 @@
           </linearGradient>
         </defs>
       </svg>
-      <p class="fade-in slider from-bottom">
+      <p class="fade-in slider from-bottom" data-anim-delay="1">
         I am a <span>web developer</span> & a <span>UI/UX designer</span> from Turkey. I design and build your website
         with high quality for <span>lower prices</span>.
       </p>
-      <a href="#portfolio" class="primary fade-in slider from-bottom">See My Work</a>
+      <a href="#portfolio" class="primary fade-in slider from-bottom" data-anim-delay="2">See My Work</a>
     </section>
     <section id="portfolio" class="vertical-gap">
       <h1 class="section">Portfolio</h1>
       <article>
-        <div class="view side-gap vertical-gap">
+        <div class="view side-gap vertical-gap fade-in slider">
           <h1 class="article"><a href="https://metehan-altuntekin.github.io/Square-Stars" target="_blank">Square
               Stars</a>
           </h1>
@@ -271,7 +271,7 @@
           <iframe class="mobile" loading="lazy" src="https://metehan-altuntekin.github.io/Square-Stars"
             frameborder="0"></iframe>
         </div>
-        <div class="extract side-gap vertical-gap">
+        <div class="extract side-gap vertical-gap fade-in slider">
           <h1>Square Stars</h1>
           <p>A configurable animation. Stars in shape of square come to existence and they animate. Then they spend
             their life and die... </p>
@@ -283,16 +283,14 @@
         </div>
       </article>
       <article>
-        <div class="view side-gap vertical-gap">
+        <div class="view side-gap vertical-gap fade-in slider">
           <h1 class="article"><a href="https://metehan-altuntekin.github.io/Square-Stars" target="_blank">Square
               Stars</a>
           </h1>
-          <iframe class="desktop" loading="lazy" src="https://metehan-altuntekin.github.io/Square-Stars"
-            frameborder="0"></iframe>
-          <iframe class="mobile" loading="lazy" src="https://metehan-altuntekin.github.io/Square-Stars"
-            frameborder="0"></iframe>
+          <img src="./media/portfolio/square-stars-desktop.png" alt="Square Stars Screenshot" class="desktop">
+          <img src="./media/portfolio/square-stars-mobile.png" alt="Square Stars Screenshot" class="mobile">
         </div>
-        <div class="extract side-gap vertical-gap">
+        <div class="extract side-gap vertical-gap fade-in slider">
           <h1>Square Stars</h1>
           <p>A configurable animation. Stars in shape of square come to existence and they animate. Then they spend
             their life and die... </p>
@@ -467,11 +465,31 @@
     <!--<button class="thanks">Special Thanks To: ...</button>-->
   </footer>
   <div id="mobile-portfolio-extract" class="mobile-page"></div>
+ <!--  <div class="ruler left"></div>
+  <div class="ruler right"></div>
+  <style>
+    .ruler{
+      position: fixed;
+      top: 50%;
+      border: 1px solid crimson;
+      height: 200px;
+      width: calc((50vw - 8.5px));
+
+    }
+    div.left{
+      left: 0;
+      
+    }
+    div.right{
+      right: 0;
+      
+    }
+  </style> -->
 </body>
 <script src="./js/general.js"></script>
-<!-- <script src="./js/bg-animation.js"></script> -->
-<!-- <script src="./js/language.js"></script> -->
-<!-- <script src="./js/appear-fade-in.js"></script> -->
+<script src="./js/bg-animation.js"></script>
+<script src="./js/language.js"></script>
+<script src="./js/appear-fade-in.js"></script>
 <script src="./js/header.js"></script>
 <script src="./js/hero-illustration.js"></script>
 

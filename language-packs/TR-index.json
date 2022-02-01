@@ -11,14 +11,6 @@
 
   "#portfolio > h1":["innerHTML", "Portfolyo"],
 
-  "#portfolio > article:nth-of-type(1) p":["innerHTML", "Aslında sadece JavaScript'te pratik yapmak için geliştirdiğim bir uygulama. Yazılım dünyasına yeni bir katkısı yok. Birinci amacı başka sitelere entegre ederek kullanmak." ],
-  "#portfolio > article:nth-of-type(1) .extract a:nth-of-type(1) span":["innerHTML", "Kaynak Kodları" ],
-  "#portfolio > article:nth-of-type(1) .extract a:nth-of-type(2) span":["innerHTML", "Yeni Sekmede Aç" ],
-
-  "#portfolio > article:nth-of-type(2) p":["innerHTML", "Özelleştirilebilir bir animasyon sistemi. Yıldız gibi görünen kare şekiller beliriyor ve hareket ediyorlar. Bir süre sonra ölüyorlar." ],
-  "#portfolio > article:nth-of-type(2) .extract a:nth-of-type(1) span":["innerHTML", "Kaynak Kodları" ],
-  "#portfolio > article:nth-of-type(2) .extract a:nth-of-type(2) span":["innerHTML", "Yeni Sekmede Aç" ],
-
   "#services > h1":["innerHTML","Hizmetler"],
   
   "#services > .design > h1":["innerHTML","UI / UX Tasarım"],

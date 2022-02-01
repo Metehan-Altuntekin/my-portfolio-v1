@@ -40,3 +40,13 @@ const sliders = document.querySelectorAll(".slider")
 sliders.forEach((slider)=>{
   slider.parentElement.style.overflow = "hidden"
 })
+
+const portfolioSlides = document.querySelectorAll("#portfolio article")
+for(let i = 0; i< portfolioSlides.length; i = i +2){
+  portfolioSlides[i].querySelector(".view").classList.add("from-left")
+  portfolioSlides[i].querySelector(".extract").classList.add("from-bottom")
+}
+for(let i = 1; i< portfolioSlides.length; i = i +2){
+  portfolioSlides[i].querySelector(".view").classList.add("from-right")
+  portfolioSlides[i].querySelector(".extract").classList.add("from-bottom")
+}

@@ -1,4 +1,27 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+:root {
+  --gap: clamp(10px, 5vw, 200px);
+  --bg: #faf7ff;
+  --purple: #925ee6;
+  --header-border: hsla(263, 73%, 64%, 0.3);
+  --purple-heading: #705b93;
+  --services-bg: #bf99ff;
+  --contact-bg: #533781;
+  --contact-article-bg: #291051;
+  --service-bg: #fff;
+  --salmon: #fea47f;
+  --salmon-vivid: #ff5f1b;
+  --salmon-bg: #ff9266;
+  --salmon-border: #fea47f;
+  --salmon-bg-light: #ffede7;
+}
+
+@media screen and (min-width: 1400px) {
+  :root {
+    --gap: clamp(10px, 10vw, 500px);
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -31,7 +54,7 @@ noscript {
 }
 
 body {
-  background-color: #FAF7FF;
+  background-color: var(--bg);
 }
 
 section {
@@ -44,41 +67,28 @@ img {
 }
 
 strong {
-  color: #FF5F1B;
+  color: var(--salmon-vivid);
 }
 
 .side-gap {
-  padding-right: clamp(10px, 5vw, 200px);
-  padding-left: clamp(10px, 5vw, 200px);
+  padding-right: var(--gap);
+  padding-left: var(--gap);
 }
 
 .vertical-gap {
-  padding-top: clamp(10px, 5vw, 200px);
-  padding-bottom: clamp(10px, 5vw, 200px);
+  padding-top: var(--gap);
+  padding-bottom: var(--gap);
 }
 
-/* @media screen and (min-width: 400px){
-  .side-gap{
-    padding: 0px 20px;
-  }
-}
-@media screen and (min-width: 1000px){
-  .side-gap{
-    padding: 0px 40px;
-  }
-}
-@media screen and (min-width: 1400px){
-  .side-gap{
-    padding: 0px 150px;
-  }
-} */
-a, button, input {
+a,
+button,
+input {
   z-index: 999;
   position: relative;
 }
 
 a.primary {
-  background-color: #FF5F1B;
+  background-color: var(--salmon-vivid);
   padding: 0.5em 2em;
   color: #fff;
   text-transform: uppercase;
@@ -90,7 +100,7 @@ a.primary {
 
 h1.section {
   color: rgba(0, 0, 0, 0.05);
-  font-size: clamp(2.4rem, 5vw, 5rem);
+  font-size: clamp(2.4rem, 15vmin, 10rem);
   letter-spacing: 0.1em;
   text-align: center;
   padding: 0.8em 0 0.4em 0;

@@ -1,12 +1,23 @@
-$bg: #FAF7FF;
-$purple: #925EE6;
-$header-border: hsla(263, 73%, 64%, 0.3);
-$services-bg: #BF99FF;
-$contact-bg: #533781;
-$contact-article-bg: #291051;
-$service-bg: #fff;
-$salmon: #FEA47F;
-$salmon-vivid: #FF5F1B;
-$salmon-bg: #FF9266;
-$salmon-border: #FEA47F;
-$salmon-bg-light: #FFEDE7;
+:root {
+  --gap: clamp(10px, 5vw, 200px);
+
+  --bg: #faf7ff;
+  --purple: #925ee6;
+  --header-border: hsla(263, 73%, 64%, 0.3);
+  --purple-heading: #705b93;
+  --services-bg: #bf99ff;
+  --contact-bg: #533781;
+  --contact-article-bg: #291051;
+  --service-bg: #fff;
+  --salmon: #fea47f;
+  --salmon-vivid: #ff5f1b;
+  --salmon-bg: #ff9266;
+  --salmon-border: #fea47f;
+  --salmon-bg-light: #ffede7;
+}
+
+@media screen and (min-width: 1400px) {
+  :root {
+    --gap: clamp(10px, 10vw, 500px);
+  }
+}
