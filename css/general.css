@@ -18,7 +18,7 @@
 
 @media screen and (min-width: 1400px) {
   :root {
-    --gap: clamp(10px, 10vw, 500px);
+    --gap: clamp(10px, 15vw, 500px);
   }
 }
 
@@ -100,7 +100,7 @@ a.primary {
 
 h1.section {
   color: rgba(0, 0, 0, 0.05);
-  font-size: clamp(2.4rem, 15vmin, 10rem);
+  font-size: clamp(2.4rem, 10vmin, 10rem);
   letter-spacing: 0.1em;
   text-align: center;
   padding: 0.8em 0 0.4em 0;

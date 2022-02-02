@@ -17,7 +17,7 @@
 
 @media screen and (min-width: 1400px) {
   :root {
-    --gap: clamp(10px, 10vw, 500px);
+    --gap: clamp(10px, 15vw, 500px);
   }
 }
 
@@ -101,6 +101,7 @@ html body header nav {
 
 html body header nav a {
   color: #111;
+  font-variant: small-caps;
   font-size: clamp(1rem, 1.5vmin, 2rem);
   line-height: clamp(1rem, 1.5vmin, 2rem);
   font-weight: 600;
@@ -124,7 +125,7 @@ html body header nav a::before {
   background-color: var(--purple);
   width: 2px;
   height: 1em;
-  border-radius: 0.5em;
+  border-radius: 0.35em;
   z-index: -1;
   -webkit-transform: translateX(-0.25em);
           transform: translateX(-0.25em);
@@ -134,12 +135,15 @@ html body header nav a::before {
 
 html body header nav a.active {
   color: white;
-  font-weight: 700;
 }
 
 html body header nav a.active::before {
   width: calc(100% + 2em);
   height: calc(100% + 1em);
+  -webkit-transition: height 10ms;
+  transition: height 10ms;
+  -webkit-transition: width 0.5s;
+  transition: width 0.5s;
   -webkit-transform: translateX(-1em);
           transform: translateX(-1em);
   opacity: 1;
@@ -173,7 +177,7 @@ html body main section#hero h1 {
   grid-area: head;
   color: #222;
   font-weight: 700;
-  font-size: 1.8rem;
+  font-size: clamp(1.8rem, 5vmax, 10rem);
   line-height: 1em;
   -ms-flex-item-align: end;
       align-self: end;
@@ -241,7 +245,6 @@ html body main section#portfolio {
       -ms-flex-direction: column;
           flex-direction: column;
   background-color: transparent;
-  gap: clamp(10px, 5vw, 200px);
 }
 
 html body main section#portfolio article {
@@ -252,6 +255,7 @@ html body main section#portfolio article {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  margin-bottom: var(--gap);
 }
 
 html body main section#portfolio article > .view {
@@ -270,19 +274,38 @@ html body main section#portfolio article > .view h1 {
   margin: 1em 0em 1.5em 0em;
 }
 
-html body main section#portfolio article > .view iframe, html body main section#portfolio article > .view img {
-  border: clamp(3px, 0.8vmin, 15px) solid var(--bg);
-  border-radius: clamp(10px, 3vmin, 50px);
-  -webkit-box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.4);
-          box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.4);
+html body main section#portfolio article > .view .site {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  place-items: center center;
   max-width: unset;
+  border-radius: clamp(10px, 3vmin, 50px);
+  background: pink;
+  -webkit-box-shadow: 0px 0px 0px clamp(3px, 0.8vmin, 15px) var(--bg);
+          box-shadow: 0px 0px 0px clamp(3px, 0.8vmin, 15px) var(--bg);
+  -webkit-filter: drop-shadow(0px 0px 15px rgba(0, 0, 0, 0.4));
+          filter: drop-shadow(0px 0px 15px rgba(0, 0, 0, 0.4));
+  place-content: center;
+  place-items: center;
 }
 
-html body main section#portfolio article > .view iframe.desktop, html body main section#portfolio article > .view img.desktop {
+html body main section#portfolio article > .view .site iframe,
+html body main section#portfolio article > .view .site img {
+  border-radius: clamp(10px, 3vmin, 50px);
+  width: 100%;
+  height: 100%;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  display: block;
+}
+
+html body main section#portfolio article > .view .site.desktop {
   display: none;
 }
 
-html body main section#portfolio article > .view iframe.mobile, html body main section#portfolio article > .view img.mobile {
+html body main section#portfolio article > .view .site.mobile {
   width: 100%;
   aspect-ratio: 9/18;
 }
@@ -326,29 +349,35 @@ html body main section#portfolio article > .extract .buttons a img {
   height: clamp(1rem, 3vmin, 3rem);
 }
 
+html body main section#portfolio article:nth-of-type(odd) {
+  padding-right: var(--gap);
+}
+
 html body main section#portfolio article:nth-of-type(odd) .view {
   border-radius: 0px clamp(50px, 9vmax, 250px) clamp(15px, 3vmax, 100px) 0px;
-  margin-right: var(--gap);
 }
 
 html body main section#portfolio article:nth-of-type(odd) .extract {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: end;
-  padding-left: unset;
+  padding-left: calc(var(--gap) / 2);
 }
 
 html body main section#portfolio article:nth-of-type(odd) .extract * {
   text-align: end;
 }
 
+html body main section#portfolio article:nth-of-type(even) {
+  padding-left: var(--gap);
+}
+
 html body main section#portfolio article:nth-of-type(even) .view {
   border-radius: clamp(50px, 9vmax, 250px) 0px 0px clamp(15px, 3vmax, 100px);
-  margin-left: var(--gap);
 }
 
 html body main section#portfolio article:nth-of-type(even) .extract {
-  padding-right: unset;
+  padding-right: calc(var(--gap) / 2);
 }
 
 html body main section#portfolio a {
@@ -384,6 +413,7 @@ html body main section#services > h1 {
 
 html body main section#services article {
   background-color: var(--service-bg);
+  max-width: 300px;
   border-radius: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -748,12 +778,6 @@ html body footer button.thanks {
   html {
     font-size: 16px;
   }
-  html body main section#hero h1 {
-    font-size: 3rem;
-  }
-  html body main section#services article {
-    width: 300px;
-  }
   html body main section#about article.info h1 {
     padding-left: 1.6em;
   }
@@ -826,7 +850,7 @@ html body footer button.thanks {
   html body main section#portfolio article .view h1 {
     display: none;
   }
-  html body main section#portfolio article .view iframe.desktop, html body main section#portfolio article .view img.desktop {
+  html body main section#portfolio article .view .site.desktop {
     grid-area: desk;
     display: block;
     aspect-ratio: 16/9;
@@ -838,7 +862,7 @@ html body footer button.thanks {
     -ms-grid-row-span: 6;
     grid-row: 1/7;
   }
-  html body main section#portfolio article .view iframe.mobile, html body main section#portfolio article .view img.mobile {
+  html body main section#portfolio article .view .site.mobile {
     grid-area: mobi;
     width: 9vw;
     -webkit-box-flex: 0;
@@ -965,8 +989,11 @@ html body footer button.thanks {
     -ms-flex-item-align: end;
         -ms-grid-row-align: end;
         align-self: end;
-    position: relative;
-    left: 50px;
+    /* position: relative;
+            left: 50px; */
+  }
+  html body main section#portfolio article {
+    margin-bottom: calc(var(--gap) / 3);
   }
   html body main section#portfolio article:nth-of-type(odd) > div {
     padding-bottom: calc(var(--gap) / 3);
