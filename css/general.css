@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 :root {
   --gap: clamp(10px, 5vw, 200px);
   --bg: #faf7ff;
@@ -29,7 +31,7 @@
           box-sizing: border-box;
   text-decoration: none;
   color: #000;
-  font-family: "Segoe UI", sans-serif;
+  font-family: "Nunito", sans-serif;
   border: none;
   text-shadow: none;
   outline: none;
@@ -85,6 +87,13 @@ button,
 input {
   z-index: 999;
   position: relative;
+  background: transparent;
+}
+
+a:hover,
+button:hover,
+input:hover {
+  cursor: pointer;
 }
 
 a.primary {
@@ -117,5 +126,14 @@ h1.article {
   height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content;
+}
+
+.snaps-inline {
+  -ms-scroll-snap-type: inline mandatory;
+      scroll-snap-type: inline mandatory;
+}
+
+.snaps-inline > * {
+  scroll-snap-align: center;
 }
 /*# sourceMappingURL=general.css.map */

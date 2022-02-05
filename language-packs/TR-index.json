@@ -9,7 +9,7 @@
   "#hero > p":["innerHTML", "Bir serbest çalışan (freelancer) <span>web yazılımcı</span> ve <span>UI / UX (Arayüz) tasarımcısı</span>yım. Kurumsal tanıtım sitesinden, e-ticaret sitesine kadar birçok çeşitten internet sitelerinin tasarımını ve kodlamasını yapıyorum."],
   "#hero > a":["innerHTML", "Yaptıklarıma Bakın"],
 
-  "#portfolio > h1":["innerHTML", "Portfolyo"],
+  "#portfolio > h1":["innerHTML", "Projeler"],
 
   "#services > h1":["innerHTML","Hizmetler"],
   

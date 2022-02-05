@@ -37,8 +37,7 @@ html body header {
   position: fixed;
   width: 100%;
   z-index: 9999;
-  background: -webkit-gradient(linear, left top, right top, color-stop(30%, var(--bg)), color-stop(40%, transparent), color-stop(60%, transparent), color-stop(70%, var(--bg)));
-  background: linear-gradient(to right, var(--bg) 30%, transparent 40%, transparent 60%, var(--bg) 70%);
+  background-color: var(--bg);
   -webkit-backdrop-filter: blur(6px);
           backdrop-filter: blur(6px);
   /*  &.scrolled{
@@ -149,6 +148,130 @@ html body header nav a.active::before {
   opacity: 1;
 }
 
+html body main {
+  /* section#about {
+        display: grid;
+        justify-content: center;
+        justify-items: center;
+        align-items: center;
+
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas:
+          " head head "
+          " img  img  "
+          " info info "
+          " prog prog "
+          " butt butt ";
+        gap: 40px;
+
+        border-radius: 0 0 50px 50px;
+
+        padding-bottom: 70px;
+        & > h1 {
+          grid-area: head;
+        }
+        & > img {
+          grid-area: img;
+          object-fit: cover;
+          border-radius: 30px;
+          //height: 65vh;
+          width: 100%;
+          max-width: 400px;
+        }
+
+        article {
+          display: flex;
+          flex-direction: column;
+          flex-wrap: wrap;
+          width: 100%;
+          max-width: 400px;
+          h1 {
+            grid-area: head;
+            padding: 0 0 10px 10px;
+          }
+          &.info {
+            grid-area: info;
+            p {
+              background-color: var(--salmon-bg-light);
+              border-radius: 30px;
+              padding: 30px 10px;
+              font-weight: 300;
+              line-height: 1.6em;
+
+              span {
+                opacity: 0.65;
+                display: block;
+                margin-top: 1em;
+              }
+            }
+          }
+
+          &.programs {
+            grid-area: prog;
+
+            ul {
+              list-style-type: none;
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              justify-content: space-between;
+              background-color: var(--salmon-bg-light);
+              padding: 20px 10px;
+              border-radius: 20px;
+              gap: 20px;
+              overflow-x: auto;
+              width: 100%;
+              li {
+              }
+              img {
+                display: inline-block;
+                height: 50px;
+              }
+            }
+          }
+          &.certificates {
+            grid-area: cert;
+            display: none;
+            .container {
+              background-color: #876db2;
+              border-radius: 30px;
+              width: 100%;
+              overflow-x: auto;
+              &::-webkit-scrollbar {
+                width: 10px;
+              }
+              ul {
+                list-style-type: none;
+                padding: 30px;
+                width: max-content;
+                display: flex;
+                flex-direction: row;
+                gap: 20px;
+
+                li {
+                  height: 250px;
+                  //border: 7px solid rgba($salmon-border, $alpha: 0.4);
+                  border-radius: 10px;
+                  a {
+                    height: 100%;
+                    width: 100%;
+                    img {
+                      object-fit: cover;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        a {
+          grid-area: butt;
+          align-self: center;
+          margin: 2em 0 4em;
+        }
+      } */
+}
+
 html body main section#hero {
   height: 100vh;
   padding-top: 50px;
@@ -173,22 +296,24 @@ html body main section#hero {
 html body main section#hero h1 {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
-  -ms-grid-column-span: 2;
+  -ms-grid-column-span: 5;
   grid-area: head;
   color: #222;
   font-weight: 700;
   font-size: clamp(1.8rem, 5vmax, 10rem);
   line-height: 1em;
   -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
       align-self: end;
 }
 
 html body main section#hero > svg {
   -ms-grid-row: 2;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 2;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 5;
   grid-area: img;
   -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
       align-self: end;
 }
 
@@ -469,44 +594,127 @@ html body main section#services article a {
 }
 
 html body main section#about {
-  display: -ms-grid;
-  display: grid;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  justify-items: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-grid-columns: (1fr)[2];
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-areas: " head head " " img  img  " " info info " " prog prog " " butt butt ";
-  gap: 40px;
-  border-radius: 0 0 50px 50px;
-  background-color: var(--bg);
-  padding-bottom: 70px;
+  -webkit-column-width: calc(max(50%));
+          column-width: calc(max(50%));
+  -webkit-column-gap: calc(var(--gap) / 2);
+          column-gap: calc(var(--gap) / 2);
 }
 
 html body main section#about > h1 {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 2;
-  grid-area: head;
+  -webkit-column-span: all;
+          column-span: all;
 }
 
-html body main section#about > img {
-  -ms-grid-row: 2;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 2;
-  grid-area: img;
-  -o-object-fit: cover;
-     object-fit: cover;
-  border-radius: 30px;
+html body main section#about img {
+  max-width: calc(min(100%, 500px));
+}
+
+html body main section#about article h1 {
+  color: var(--purple-heading);
+  font-size: clamp(1.5rem, 3vmax, 2.4rem);
+  margin-bottom: 0.6em;
+  margin-top: 1.2em;
+}
+
+html body main section#about article.info p span {
+  opacity: 0.7;
+  display: block;
+  margin-top: 1em;
+}
+
+html body main section#about article.tools > * {
   width: 100%;
-  max-width: 400px;
 }
 
-html body main section#about article {
+html body main section#about article.tools .container {
+  background-color: #f3ebff;
+  border-radius: 1.6rem;
+}
+
+html body main section#about article.tools .container > * {
+  width: 100%;
+  display: block;
+}
+
+html body main section#about article.tools .container .buttons {
+  background-color: #e3d1ff;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  position: relative;
+  place-items: center;
+  place-content: center;
+  border-radius: 0.4em;
+  padding: 0.2em;
+  gap: 0.4em;
+}
+
+html body main section#about article.tools .container .buttons * {
+  font-size: clamp(1rem, 1.5vw, 1.6rem);
+  border-radius: 0.4em;
+}
+
+html body main section#about article.tools .container .buttons button {
+  background-color: transparent;
+  color: #666;
+  font-variant: small-caps;
+  font-weight: 600;
+  padding: 0.5em;
+  width: 100%;
+}
+
+html body main section#about article.tools .container .buttons button:hover {
+  -webkit-box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3);
+}
+
+html body main section#about article.tools .container .buttons button.active {
+  color: #fff;
+}
+
+html body main section#about article.tools .container .buttons button.active:hover {
+  background-color: unset;
+}
+
+html body main section#about article.tools .container .buttons span {
+  display: block;
+  position: absolute;
+  /* top: 0.2em;
+                  left: 0.2em;
+ */
+  -ms-grid-column-align: start;
+      justify-self: start;
+  width: calc((100% / 3) - 0.4em);
+  height: calc(100% - 0.4em);
+  margin: 0.2em;
+  background-color: #8e47ff;
+  -webkit-box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
+}
+
+html body main section#about article.tools .container ul {
+  list-style-type: none;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(70px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+html body main section#about article.tools .container ul li {
+  background-color: #f9f5ff;
+  -webkit-box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 0.4rem;
+  aspect-ratio: 3/4;
+}
+
+html body main section#about article.tools .container ul li figure {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -514,132 +722,124 @@ html body main section#about article {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  width: 100%;
-  max-width: 400px;
-}
-
-html body main section#about article h1 {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 2;
-  grid-area: head;
-  padding: 0 0 10px 10px;
-}
-
-html body main section#about article.info {
-  -ms-grid-row: 3;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 2;
-  grid-area: info;
-}
-
-html body main section#about article.info p {
-  background-color: var(--salmon-bg-light);
-  border-radius: 30px;
-  padding: 30px 10px;
-  font-weight: 300;
-  line-height: 1.6em;
-}
-
-html body main section#about article.info p span {
-  opacity: 0.65;
-  display: block;
-  margin-top: 1em;
-}
-
-html body main section#about article.programs {
-  -ms-grid-row: 4;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 2;
-  grid-area: prog;
-}
-
-html body main section#about article.programs ul {
-  list-style-type: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  background-color: var(--salmon-bg-light);
-  padding: 20px 10px;
-  border-radius: 20px;
-  gap: 20px;
-  overflow-x: auto;
-  width: 100%;
-}
-
-html body main section#about article.programs ul img {
-  display: inline-block;
-  height: 50px;
-}
-
-html body main section#about article.certificates {
-  grid-area: cert;
-  display: none;
-}
-
-html body main section#about article.certificates .container {
-  background-color: #876db2;
-  border-radius: 30px;
-  width: 100%;
-  overflow-x: auto;
-}
-
-html body main section#about article.certificates .container::-webkit-scrollbar {
-  width: 10px;
-}
-
-html body main section#about article.certificates .container ul {
-  list-style-type: none;
-  padding: 30px;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  gap: 20px;
-}
-
-html body main section#about article.certificates .container ul li {
-  height: 250px;
-  border-radius: 10px;
-}
-
-html body main section#about article.certificates .container ul li a {
   height: 100%;
   width: 100%;
 }
 
-html body main section#about article.certificates .container ul li a img {
-  -o-object-fit: cover;
-     object-fit: cover;
+html body main section#about article.tools .container ul li figure img {
+  height: 70%;
+  margin: 1em;
 }
 
-html body main section#about a {
-  -ms-grid-row: 5;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 2;
-  grid-area: butt;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-  margin: 2em 0 4em;
+html body main section#about article.tools .container ul li figure figcaption {
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-bottom: 1em;
+}
+
+html body main section#about article.certificates {
+  --space: 1rem;
+  -webkit-column-span: all;
+          column-span: all;
+  overflow: hidden;
+}
+
+html body main section#about article.certificates .container {
+  position: relative;
+}
+
+html body main section#about article.certificates .container .media-scroll {
+  position: relative;
+  z-index: 1;
+}
+
+html body main section#about article.certificates .container .media-scroll ul {
+  overflow-x: auto;
+  overflow-y: hidden;
+  overscroll-behavior-inline: contain;
+  list-style-type: none;
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc(min(100%, 400px));
+  -webkit-column-gap: var(--space);
+          column-gap: var(--space);
+  padding-bottom: var(--space);
+}
+
+html body main section#about article.certificates .container .media-scroll ul li {
+  display: inline-block;
+  background-color: #e3d1ff;
+  border-radius: 25px;
+  padding: var(--space);
+}
+
+html body main section#about article.certificates .container .media-scroll ul li a {
+  height: 100%;
+  width: 100%;
+}
+
+html body main section#about article.certificates .container .media-scroll ul li a figure {
+  height: 100%;
+  width: 100%;
+}
+
+html body main section#about article.certificates .container .media-scroll ul li a figure img {
+  aspect-ratio: 16/9;
+  width: 100%;
+  -o-object-position: top;
+     object-position: top;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
+          box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
+}
+
+html body main section#about article.certificates .container .media-scroll ul li a figure figcaption {
+  width: 100%;
+  text-align: center;
+  font-size: 1rem;
+  color: #444;
+  font-weight: bold;
+  margin-top: calc(var(--space) / 2);
+}
+
+html body main section#about article.certificates .container .frontground {
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  background: -webkit-gradient(linear, left top, right top, from(var(--bg)), color-stop(15%, transparent), color-stop(85%, transparent), to(var(--bg)));
+  background: linear-gradient(to right, var(--bg), transparent 15%, transparent 85%, var(--bg));
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+html body main section#about article.certificates .container .frontground button {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  pointer-events: all;
+}
+
+html body main section#about article.certificates .container .frontground button span {
+  font-size: 7vmin;
+  height: 7vmin;
+  color: var(--purple-heading);
+}
+
+html body main section#about article.certificates .container .frontground button.left {
+  left: 0;
+}
+
+html body main section#about article.certificates .container .frontground button.right {
+  right: 0;
 }
 
 html body main section#contact {
@@ -778,23 +978,35 @@ html body footer button.thanks {
   html {
     font-size: 16px;
   }
-  html body main section#about article.info h1 {
-    padding-left: 1.6em;
-  }
-  html body main section#about article.info p {
-    padding: 2em;
-  }
-  html body main section#about article.programs h1 {
-    padding-left: 1.7em;
-  }
-  html body main section#about article.programs ul {
-    padding-left: 2em;
-  }
-  html body main section#about article.certificates h1 {
-    padding-left: 1.7em;
-  }
-  html body main section#about article.certificates ul {
-    padding-left: 2em;
+  html body main {
+    /* section#about {
+          article {
+            &.info {
+              h1 {
+                padding-left: 1.6em;
+              }
+              p {
+                padding: 2em;
+              }
+            }
+            &.programs {
+              h1 {
+                padding-left: 1.7em;
+              }
+              ul {
+                padding-left: 2em;
+              }
+            }
+            &.certificates {
+              h1 {
+                padding-left: 1.7em;
+              }
+              ul {
+                padding-left: 2em;
+              }
+            }
+          }
+        } */
   }
 }
 
@@ -803,6 +1015,35 @@ html body footer button.thanks {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+  }
+  html body main {
+    /* section#about {
+          grid-template-areas:
+            " head head "
+            " img  info "
+            " prog prog "
+            " cert cert ";
+          & > img {
+            height: 100%;
+            justify-self: end;
+          }
+          article {
+            &.info {
+              justify-self: start;
+            }
+            &.programs,
+            &.certificates {
+              width: 840px;
+              max-width: 100%;
+            }
+            &.certificates {
+              display: flex;
+            }
+          }
+          & > a {
+            display: none;
+          }
+        } */
   }
   html body main section#hero {
     -webkit-box-pack: start;
@@ -952,33 +1193,31 @@ html body footer button.thanks {
     width: -moz-max-content;
     width: max-content;
   }
-  html body main section#about {
-        grid-template-areas: " head head " " img  info " " prog prog " " cert cert ";
-  }
-  html body main section#about > img {
-    height: 100%;
-    -ms-grid-column-align: end;
-        justify-self: end;
-  }
-  html body main section#about article.info {
-    -ms-grid-column-align: start;
-        justify-self: start;
-  }
-  html body main section#about article.programs, html body main section#about article.certificates {
-    width: 840px;
-    max-width: 100%;
-  }
-  html body main section#about article.certificates {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-  html body main section#about > a {
-    display: none;
-  }
 }
 
 @media screen and (min-width: 1400px) {
+  html body main {
+    /*  section#about {
+          gap: 50px;
+          > img {
+            max-width: 500px;
+          }
+          article {
+            h1 {
+              padding-left: 70px;
+            }
+            &.info {
+              max-width: 500px;
+              p {
+              }
+            }
+            &.programs,
+            &.certificates {
+              width: 1050px;
+            }
+          }
+        } */
+  }
   html body main section#hero {
     padding-top: 20vh;
   }
@@ -1008,21 +1247,6 @@ html body footer button.thanks {
   }
   html body main section#portfolio article:nth-of-type(even) .view {
     padding-left: calc(var(--gap) / 3);
-  }
-  html body main section#about {
-    gap: 50px;
-  }
-  html body main section#about > img {
-    max-width: 500px;
-  }
-  html body main section#about article h1 {
-    padding-left: 70px;
-  }
-  html body main section#about article.info {
-    max-width: 500px;
-  }
-  html body main section#about article.programs, html body main section#about article.certificates {
-    width: 1050px;
   }
 }
 /*# sourceMappingURL=index.css.map */
