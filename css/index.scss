@@ -517,7 +517,10 @@ html {
                   /* top: 0.2em;
                   left: 0.2em;
  */
-                  justify-self: start;
+                  transition: 0.4s;
+                  transform: translateX(0);
+                  //justify-self: start;
+                  left: 0;
                   width: calc((100% / 3) - 0.4em);
                   height: calc(100% - 0.4em);
                   margin: 0.2em;

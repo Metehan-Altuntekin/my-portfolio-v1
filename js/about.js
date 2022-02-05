@@ -1,3 +1,37 @@
+//--------------  Tools & Skills  ------------------
+
+const skills = {
+  buttonsArea: document.querySelector("#about .tools .buttons"),
+  buttons: Array.from(document.querySelectorAll("#about .tools .buttons button")),
+  buttonActiveBg: document.querySelector("#about .tools .buttons .active-bg")
+}
+
+skills.buttons.forEach((item, index, array)=>{
+  item.addEventListener("click", ()=>{
+    if(array.indexOf(item) == 0){
+      skills.buttonActiveBg.style.left = "0"
+    }
+    if(array.indexOf(item) == 1){
+      skills.buttonActiveBg.style.left = `calc((100% / 6)*2)`
+    }
+    if(array.indexOf(item) == 2){
+      skills.buttonActiveBg.style.left = `calc((100% / 6)*4)`
+
+    }
+    
+    item.classList.add("active")
+    array.forEach((it)=>{
+      if(it != item){
+        it.classList.remove("active")
+      }
+    })
+  })
+})
+
+
+
+//----------------  Certificates -------------------
+
 const certificatesContainer = document.querySelector("#about article.certificates ul")
 
 const certNavLeft = document.querySelector("#about .certificates button.left")
@@ -18,3 +52,7 @@ certNavLeft.addEventListener("click", ()=>{
 certNavRight.addEventListener("click", ()=>{
   certificatesContainer.scrollLeft += parseInt(getComputedStyle(certificate).width)
 })
+
+
+
+

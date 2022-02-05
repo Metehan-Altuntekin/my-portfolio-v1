@@ -683,8 +683,11 @@ html body main section#about article.tools .container .buttons span {
   /* top: 0.2em;
                   left: 0.2em;
  */
-  -ms-grid-column-align: start;
-      justify-self: start;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  left: 0;
   width: calc((100% / 3) - 0.4em);
   height: calc(100% - 0.4em);
   margin: 0.2em;
