@@ -437,14 +437,39 @@ html {
         }
       } */
       section#about {
-        column-width: calc(max(50%));
+        display: grid;
+        //column-width: calc(400px);
         //column-count: 2;
         column-gap: calc(var(--gap) / 2);
+        padding-bottom: calc(var(--gap)/2);
+        
+        @media screen and (min-width: 800px){
+          grid-template-columns: repeat(2, 1fr);
+          align-items: start;
+          img{
+            grid-row: 2/4;
+            height: 100%;
+          }
+          .info{
+            grid-column: 2/-1;
+            grid-row: 2/3;
+            h1{
+              margin-top: 0;
+              padding-top: 0;
+              line-height: 1em;
+            }
+          }
+          .tools{
+            grid-column: 2/-1;
+            grid-row: 3/4;
+          }
+        }
         > h1 {
-          column-span: all;
+          grid-column: 1/-1;
         }
         img {
-          max-width: calc(min(100%, 500px));
+          //max-width: calc(min(100%, 500px));
+          object-fit: cover;
         }
         article {
           h1 {
@@ -531,33 +556,42 @@ html {
               ul {
                 list-style-type: none;
                 display: grid;
-                grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+                grid-template-columns: repeat(auto-fill, minmax(5rem, 1fr));
                 gap: 1rem;
                 padding: 1rem;
                 justify-content: center;
 
                 li {
                   background-color: #f9f5ff;
-                  //width: clamp(5rem, 10%, 7rem);
                   box-shadow: 0px 0px 6px rgba($color: #000000, $alpha: 0.1);
                   border-radius: 0.4rem;
                   aspect-ratio: 3/4;
-                  figure {
+
+                  $space: 0.7rem;
+
+                  figure{
+                    height: 100%;
+                    width: 100%;
+                    padding: $space 0;
                     display: flex;
                     flex-direction: column;
                     justify-content: space-between;
-                    height: 100%;
-                    width: 100%;
-                    //padding: 1em;
-                    img {
-                      height: 70%;
-                      margin: 1em;
+
+                    *{
+                      min-height: 0;
+                      min-width: 0;
                     }
-                    figcaption {
-                      text-align: center;
+                    img{
+                      object-fit: contain;
+                      height: 60%;
+                      margin-right: $space;
+                      margin-left: $space;
+                    }
+                    figcaption{
+                      margin-top: $space;
                       font-size: 0.8rem;
                       font-weight: 700;
-                      margin-bottom: 1em;
+                      text-align: center;
                     }
                   }
                 }
@@ -566,9 +600,9 @@ html {
           }
           &.certificates {
             --space: 1rem;
-            column-span: all;
 
-            overflow: hidden;
+            grid-column: 1/-1;
+
 
             .container {
               position: relative;
@@ -576,7 +610,7 @@ html {
                 position: relative;
                 z-index: 1;
                 ul {
-                  overflow-x: auto;
+                  overflow-x: hidden;
                   overflow-y: hidden;
                   overscroll-behavior-inline: contain;
 

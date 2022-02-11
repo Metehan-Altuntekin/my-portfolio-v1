@@ -594,19 +594,53 @@ html body main section#services article a {
 }
 
 html body main section#about {
-  -webkit-column-width: calc(max(50%));
-          column-width: calc(max(50%));
+  display: -ms-grid;
+  display: grid;
   -webkit-column-gap: calc(var(--gap) / 2);
           column-gap: calc(var(--gap) / 2);
+  padding-bottom: calc(var(--gap)/2);
+}
+
+@media screen and (min-width: 800px) {
+  html body main section#about {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
+  }
+  html body main section#about img {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 2;
+    grid-row: 2/4;
+    height: 100%;
+  }
+  html body main section#about .info {
+    grid-column: 2/-1;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2/3;
+  }
+  html body main section#about .info h1 {
+    margin-top: 0;
+    padding-top: 0;
+    line-height: 1em;
+  }
+  html body main section#about .tools {
+    grid-column: 2/-1;
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    grid-row: 3/4;
+  }
 }
 
 html body main section#about > h1 {
-  -webkit-column-span: all;
-          column-span: all;
+  grid-column: 1/-1;
 }
 
 html body main section#about img {
-  max-width: calc(min(100%, 500px));
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 html body main section#about article h1 {
@@ -700,8 +734,8 @@ html body main section#about article.tools .container ul {
   list-style-type: none;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(70px, 1fr))[auto-fill];
-      grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+  -ms-grid-columns: (minmax(5rem, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(5rem, 1fr));
   gap: 1rem;
   padding: 1rem;
   -webkit-box-pack: center;
@@ -718,6 +752,9 @@ html body main section#about article.tools .container ul li {
 }
 
 html body main section#about article.tools .container ul li figure {
+  height: 100%;
+  width: 100%;
+  padding: 0.7rem 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -728,27 +765,31 @@ html body main section#about article.tools .container ul li figure {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  height: 100%;
-  width: 100%;
+}
+
+html body main section#about article.tools .container ul li figure * {
+  min-height: 0;
+  min-width: 0;
 }
 
 html body main section#about article.tools .container ul li figure img {
-  height: 70%;
-  margin: 1em;
+  -o-object-fit: contain;
+     object-fit: contain;
+  height: 60%;
+  margin-right: 0.7rem;
+  margin-left: 0.7rem;
 }
 
 html body main section#about article.tools .container ul li figure figcaption {
-  text-align: center;
+  margin-top: 0.7rem;
   font-size: 0.8rem;
   font-weight: 700;
-  margin-bottom: 1em;
+  text-align: center;
 }
 
 html body main section#about article.certificates {
   --space: 1rem;
-  -webkit-column-span: all;
-          column-span: all;
-  overflow: hidden;
+  grid-column: 1/-1;
 }
 
 html body main section#about article.certificates .container {
@@ -761,7 +802,7 @@ html body main section#about article.certificates .container .media-scroll {
 }
 
 html body main section#about article.certificates .container .media-scroll ul {
-  overflow-x: auto;
+  overflow-x: hidden;
   overflow-y: hidden;
   overscroll-behavior-inline: contain;
   list-style-type: none;
