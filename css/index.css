@@ -829,12 +829,11 @@ html body main section#about article.certificates .container .media-scroll ul li
 }
 
 html body main section#about article.certificates .container .media-scroll ul li a figure {
-  height: 100%;
   width: 100%;
 }
 
 html body main section#about article.certificates .container .media-scroll ul li a figure img {
-  aspect-ratio: 16/9;
+  aspect-ratio: 16/10;
   width: 100%;
   -o-object-position: top;
      object-position: top;
