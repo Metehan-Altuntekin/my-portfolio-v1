@@ -602,7 +602,7 @@ html {
             --space: 1rem;
 
             grid-column: 1/-1;
-
+            overflow: hidden;
 
             .container {
               position: relative;
