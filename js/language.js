@@ -1,6 +1,7 @@
 /* This is a simple static website language adaption system I created myself.
     It detects navigator's language and if it is "tr-TR" it converts to page to Turkish.
 */
+
 if (navigator.language == "tr-TR") {
   ChangeLanguage("tr-TR")
 }
@@ -16,14 +17,6 @@ function ChangeLanguage(language) {
 
   GetLangPack(packAdress)
     .then(function (pack) { ApplyLangPack(pack) })
-  /* .then(function () {
-    //Need to create animations again
-    CreateBg(document.getElementById("hero"))
-    CreateBg(document.getElementById("portfolio"))
-    CreateBg(document.getElementById("services"), "white", "0.15")
-    CreateBg(document.getElementById("about"))
-    CreateBg(document.getElementById("contact"), "white", "0.03")
-  }) */
 
 }
 

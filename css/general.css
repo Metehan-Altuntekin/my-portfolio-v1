@@ -116,6 +116,7 @@ h1.section {
   display: block;
   width: 100%;
   font-variant: small-caps;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 h1.article {
