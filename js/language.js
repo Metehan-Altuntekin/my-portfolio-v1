@@ -31,19 +31,8 @@ langSwitches.forEach(element => {
     localStorage.forceLang = true
     localStorage.lang = element.name
 
-    /*  let d = new Date()
-    d.setDate(d.getDate() + 365)
-    document.cookie = `forceSwitch=true; expires=${d}; path=/`
-    document.cookie = `lang=${element.name}; expires=${d}; path=/` */
   })
 });
-
-/* if (!forceLang) {
-  if (navigator.language == "tr-TR") {
-    ChangeLanguage("tr-TR")
-  }
-} */
-
 
 //If language have been manually changed before, remember that change 
 if(localStorage.forceLang == "true"){
@@ -51,8 +40,12 @@ if(localStorage.forceLang == "true"){
     ChangeLanguage("tr-TR")
   }
 } 
+//If language haven't been changed manually, set the language to navigator's language
 if(localStorage.length == 0){
-  IndicateLanguage("en")
+  if (navigator.language == "tr-TR") {
+    ChangeLanguage("tr-TR")
+    IndicateLanguage("tr")
+  }
 }
 
 //Function for visibility of active language in langMenu
