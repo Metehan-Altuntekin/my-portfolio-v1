@@ -26,6 +26,7 @@ function CreateBgParticle(zone, color, opacity) {
   bgParticle.setAttribute("viewBox", "0 0 145 61")
   bgParticle.setAttribute("fill", "none")
   bgParticle.setAttribute("xmlns", "http://www.w3.org/2000/svg")
+  bgParticle.setAttribute("aria-hidden", "true")
 
   bgParticle.addEventListener("click", function () {      //Explode on click
     //bgParticle.style.transition = "width 0.1s ease-out"
