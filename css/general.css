@@ -23,19 +23,16 @@
     --gap: clamp(10px, 15vw, 500px);
   }
 }
-
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   text-decoration: none;
   color: #000;
-  font-family: "Nunito","Segoe UI", sans-serif;
+  font-family: "Nunito", "Segoe UI", sans-serif;
   border: none;
   text-shadow: none;
   outline: none;
-  -webkit-transition: 0.2s;
   transition: 0.2s;
   scroll-behavior: smooth;
 }
@@ -46,11 +43,9 @@ noscript {
   background-color: white;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   padding: 1em 2em;
-  -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
-          box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
   text-align: center;
   line-height: 1.4;
 }
@@ -89,7 +84,6 @@ input {
   position: relative;
   background: transparent;
 }
-
 a:hover,
 button:hover,
 input:hover {
@@ -116,7 +110,7 @@ h1.section {
   display: block;
   width: 100%;
   font-variant: small-caps;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 h1.article {
@@ -133,8 +127,6 @@ h1.article {
   -ms-scroll-snap-type: inline mandatory;
       scroll-snap-type: inline mandatory;
 }
-
 .snaps-inline > * {
   scroll-snap-align: center;
-}
-/*# sourceMappingURL=general.css.map */
+}/*# sourceMappingURL=general.css.map */

@@ -7,69 +7,54 @@
 
 @-webkit-keyframes Frame {
   0% {
-    -webkit-transform: translateX(10%);
-            transform: translateX(10%);
+    transform: translateX(10%);
   }
   50% {
-    -webkit-transform: translateX(-10%);
-            transform: translateX(-10%);
+    transform: translateX(-10%);
   }
   100% {
-    -webkit-transform: translateX(10%);
-            transform: translateX(10%);
+    transform: translateX(10%);
   }
 }
 
 @keyframes Frame {
   0% {
-    -webkit-transform: translateX(10%);
-            transform: translateX(10%);
+    transform: translateX(10%);
   }
   50% {
-    -webkit-transform: translateX(-10%);
-            transform: translateX(-10%);
+    transform: translateX(-10%);
   }
   100% {
-    -webkit-transform: translateX(10%);
-            transform: translateX(10%);
+    transform: translateX(10%);
   }
 }
-
 #Frame-Carried,
 #Crane-String {
   -webkit-animation: Swing 10s infinite;
           animation: Swing 10s infinite;
-  -webkit-transform-origin: top;
-          transform-origin: top;
+  transform-origin: top;
 }
 
 @-webkit-keyframes Swing {
   0% {
-    -webkit-transform: translateX(9%) rotate(-5deg);
-            transform: translateX(9%) rotate(-5deg);
+    transform: translateX(9%) rotate(-5deg);
   }
   50% {
-    -webkit-transform: translateX(-9%) rotate(5deg);
-            transform: translateX(-9%) rotate(5deg);
+    transform: translateX(-9%) rotate(5deg);
   }
   100% {
-    -webkit-transform: translateX(9%) rotate(-5deg);
-            transform: translateX(9%) rotate(-5deg);
+    transform: translateX(9%) rotate(-5deg);
   }
 }
 
 @keyframes Swing {
   0% {
-    -webkit-transform: translateX(9%) rotate(-5deg);
-            transform: translateX(9%) rotate(-5deg);
+    transform: translateX(9%) rotate(-5deg);
   }
   50% {
-    -webkit-transform: translateX(-9%) rotate(5deg);
-            transform: translateX(-9%) rotate(5deg);
+    transform: translateX(-9%) rotate(5deg);
   }
   100% {
-    -webkit-transform: translateX(9%) rotate(-5deg);
-            transform: translateX(9%) rotate(-5deg);
+    transform: translateX(9%) rotate(-5deg);
   }
-}
-/*# sourceMappingURL=hero-illustration.css.map */
+}/*# sourceMappingURL=hero-illustration.css.map */

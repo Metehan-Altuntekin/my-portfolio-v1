@@ -12,12 +12,10 @@
   position: absolute;
   width: clamp(40px, 4vw, 160px);
 }
-
 .bg-particle.move-right {
   -webkit-animation: BgParticleMoveRight infinite 4s linear;
           animation: BgParticleMoveRight infinite 4s linear;
 }
-
 .bg-particle.move-left {
   -webkit-animation: BgParticleMoveLeft infinite 4s linear;
           animation: BgParticleMoveLeft infinite 4s linear;
@@ -25,12 +23,10 @@
 
 @-webkit-keyframes BgParticleMoveRight {
   0% {
-    -webkit-transform: translateX(0px);
-            transform: translateX(0px);
+    transform: translateX(0px);
   }
   100% {
-    -webkit-transform: translateX(15vw);
-            transform: translateX(15vw);
+    transform: translateX(15vw);
   }
   /* 50%{
     transform: translateX(5vw);
@@ -43,12 +39,10 @@
 
 @keyframes BgParticleMoveRight {
   0% {
-    -webkit-transform: translateX(0px);
-            transform: translateX(0px);
+    transform: translateX(0px);
   }
   100% {
-    -webkit-transform: translateX(15vw);
-            transform: translateX(15vw);
+    transform: translateX(15vw);
   }
   /* 50%{
     transform: translateX(5vw);
@@ -58,15 +52,12 @@
     //opacity: 0;
   } */
 }
-
 @-webkit-keyframes BgParticleMoveLeft {
   0% {
-    -webkit-transform: translateX(0px);
-            transform: translateX(0px);
+    transform: translateX(0px);
   }
   100% {
-    -webkit-transform: translateX(-15vw);
-            transform: translateX(-15vw);
+    transform: translateX(-15vw);
   }
   /* 50%{
     transform: translateX(-5vw);
@@ -76,15 +67,12 @@
     //opacity: 0;
   } */
 }
-
 @keyframes BgParticleMoveLeft {
   0% {
-    -webkit-transform: translateX(0px);
-            transform: translateX(0px);
+    transform: translateX(0px);
   }
   100% {
-    -webkit-transform: translateX(-15vw);
-            transform: translateX(-15vw);
+    transform: translateX(-15vw);
   }
   /* 50%{
     transform: translateX(-5vw);
@@ -93,5 +81,4 @@
     transform: translateX(0px);
     //opacity: 0;
   } */
-}
-/*# sourceMappingURL=bg.css.map */
+}/*# sourceMappingURL=bg.css.map */

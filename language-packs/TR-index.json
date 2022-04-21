@@ -35,7 +35,7 @@
   "#about > h1":["innerHTML","Hakkımda"],
 
   "#about > .info > h1":["innerHTML","Ben Kimim?"],
-  "#about > .info > p":["innerHTML","Yeni bir serbest çalışan (freelancer) web tasarımcı ve yazılımcıyım. Bu işi kendi kendime öğreniyorum ve bu işte daha da gelişmek istiyorum. Yeni başlamış olmam sakın sizi yanıltmasın, işime bütün titizliğimi veririm ve işimin kaliteli olmasını öncelik edinirim. Sadece, benden tecrübeli insanlara göre daha yavaşım ve biraz daha basit işleri yapıyorum. <span><strong>Vergi mükellefiyim</strong> ve siparişlerinize makbuz kesiyorum.</span><span>Eğer sağlayabileceğim hizmetlere ihtiyacınız varsa benimle <a href='#contact'><strong>iletişime geçebilirsiniz</strong></a>.</span>"],
+  "#about > .info > p":["innerHTML","Yeni bir serbest çalışan (freelancer) web tasarımcı ve yazılımcıyım. Bu işi kendi kendime öğreniyorum ve bu işte daha da gelişmek istiyorum. Yeni başlamış olmam sakın sizi yanıltmasın, işime bütün titizliğimi veririm ve işimin kaliteli olmasını öncelik edinirim. Sadece, benden tecrübeli insanlara göre daha yavaşım ve biraz daha basit işleri yapıyorum. <span>Eğer sağlayabileceğim hizmetlere ihtiyacınız varsa benimle <a href='#contact'><strong>iletişime geçebilirsiniz</strong></a>.</span>"],
   
   "#about > .tools > h1":["innerHTML","Araçlar & Diller"],
   

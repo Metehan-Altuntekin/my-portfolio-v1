@@ -1,32 +1,25 @@
 .fade-in {
   opacity: 0;
-  -webkit-transition: 0.34s ease-out;
   transition: 0.34s ease-out;
 }
 
 .from-left {
-  -webkit-transform: translateX(-20%);
-          transform: translateX(-20%);
+  transform: translateX(-20%);
 }
 
 .from-right {
-  -webkit-transform: translateX(20%);
-          transform: translateX(20%);
+  transform: translateX(20%);
 }
 
 .from-bottom {
-  -webkit-transform: translateY(20%);
-          transform: translateY(20%);
+  transform: translateY(20%);
 }
 
 .from-top {
-  -webkit-transform: translateY(-20%);
-          transform: translateY(-20%);
+  transform: translateY(-20%);
 }
 
 .appear {
   opacity: 1;
-  -webkit-transform: translate(0px, 0px);
-          transform: translate(0px, 0px);
-}
-/*# sourceMappingURL=fade-in.css.map */
+  transform: translate(0px, 0px);
+}/*# sourceMappingURL=fade-in.css.map */
